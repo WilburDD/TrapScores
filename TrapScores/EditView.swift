@@ -17,9 +17,9 @@ struct EditView: View {
     
     var body: some View {
         VStack {
-            Image ("TrapShooter")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+//            Image ("TrapShooter")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
             Text ("Round Edit")
                 .font(.largeTitle).fontWeight(.bold).italic().multilineTextAlignment(.center)
                 .padding(5)
@@ -90,7 +90,6 @@ struct EditView: View {
                     .multilineTextAlignment(.center)
                     .padding()
             })
-            VStack {
                 HStack {
                     ZStack {
                         Text ("\(roundsData.posCount[0])")
@@ -170,8 +169,7 @@ struct EditView: View {
                 }
                 Spacer()
                 Text("\(roundsData.roundDate .formatDate())")
-            }
-            .background(.white)
+
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             Spacer()
         }

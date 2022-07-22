@@ -165,8 +165,8 @@ struct EditView: View {
                         }
                         .opacity(0.1)
                     }
-                    .padding()
                 }
+                .padding()
                 Spacer()
                 Text("\(roundsData.roundDate .formatDate())")
 

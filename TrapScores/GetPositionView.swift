@@ -79,14 +79,12 @@ struct GetPositionView: View {
                 .overlay(.blue)
             Spacer()
             ScoringSelectionView()
-                .padding()
             Spacer()
             Text("Press clicker or iPhone volume button AFTER selecting Range & Position to start scoring.")
                 .fontWeight(.bold)
                 .italic()
                 .multilineTextAlignment(.center)
                 .font(.title2)
-            //            Spacer()
             NavigationLink(
                 destination: NewRoundView(rounds: Array(roundsData.roundsData)),
                 isActive: $roundsData.posSelected,

@@ -54,6 +54,7 @@ class RoundsDataStack: ObservableObject {
     private var audioSession = AVAudioSession.sharedInstance()
     private var priorVolume = 0.5
     private var newVolume = 0.0
+    private var clickCount = 0
     
     struct PersistenceController {
         static let shared = PersistenceController()
@@ -159,6 +160,7 @@ class RoundsDataStack: ObservableObject {
         }
         shotCount += 1
         if shotCount == 25 {
+            scoringStarted = false
             roundComplete = true
         }
         if shotCount == 5 || shotCount == 10 || shotCount == 15 ||  shotCount == 20 {
@@ -222,21 +224,20 @@ class RoundsDataStack: ObservableObject {
         checkClicker()
     }
     
-    func observeClicker () {
-        if self.posSelected == true {
-            outputVolumeObserve = audioSession.observe(\.outputVolume) { [self] (session, value) in
-                DispatchQueue.main.async {
-                    self.newVolume = Double(session.outputVolume)
-                    if self.newVolume > 0.5 {
+    func observeVolume () {
+        outputVolumeObserve = audioSession.observe(\.outputVolume) { [self] (session, value) in
+            if self.viewSet == false {
+                self.clickCount += 1
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
+                    if self.clickCount == 1 {
                         self.hitScore = true
                         self.countShot()
                     }
-                    if self.newVolume < 0.5 {
+                    if self.clickCount == 2 {
                         self.hitScore = false
                         self.countShot()
                     }
-                    self.priorVolume = self.newVolume
-                    self.viewSet = false
+                    self.clickCount = 0
                     self.resetVolume.toggle()
                 }
             }
@@ -247,8 +248,9 @@ class RoundsDataStack: ObservableObject {
         if self.clickerConfirm == true && self.scoringStarted == false {
             outputVolumeObserve = audioSession.observe(\.outputVolume) { (audioSession, changes) in
                 self.clickerConfirm = false
-                self.resetVolume = true
-                self.outputVolumeObserve!.invalidate()
+//                self.turnOffClicker()
+                self.viewSet = false
+//                self.resetVolume.toggle()
                 self.posSelected = true
             }
         }

@@ -93,10 +93,10 @@ struct GetPositionView: View {
                 label: {})
             .environmentObject(roundsData)
             .onAppear{
-                MPVolumeView.setVolume()
                 roundsData.seePos = [0.3, 0.3, 0.3, 0.3, 0.3]
                 roundsData.clickerConfirm = true
                 roundsData.turnOnClicker()
+                MPVolumeView.setVolume()
             }
         }
         .edgesIgnoringSafeArea(.top)

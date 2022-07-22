@@ -149,12 +149,21 @@ struct NewRoundView: View {
         
         .environmentObject(roundsData)
         .onAppear{
+            roundsData.viewSet = true
             roundsData.scoringStarted = true
             MPVolumeView.setVolume()
-            roundsData.observeClicker()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+                roundsData.viewSet = false
+            }
+            roundsData.turnOnClicker()
+            roundsData.observeVolume()
         }
         .onChange(of: roundsData.resetVolume) { newValue in
+            roundsData.viewSet = true
             MPVolumeView.setVolume()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+                roundsData.viewSet = false
+            }
         }
     }
 }

@@ -123,11 +123,7 @@ extension Button {
 
 struct GetPositionView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
             GetPositionView()
                 .environmentObject(RoundsDataStack())
-            GetPositionView()
-                .environmentObject(RoundsDataStack())
-        }
     }
 }

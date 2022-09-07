@@ -228,7 +228,7 @@ class RoundsDataStack: ObservableObject {
         outputVolumeObserve = audioSession.observe(\.outputVolume) { [self] (session, value) in
             if self.viewSet == false {
                 self.clickCount += 1
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
                     if self.clickCount == 1 {
                         self.hitScore = true
                         self.countShot()

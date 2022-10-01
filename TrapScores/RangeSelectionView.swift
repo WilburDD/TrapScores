@@ -60,10 +60,13 @@ struct RangeSelectionView: View {
             .clipShape(Capsule())
             .opacity(roundsData.intlOpacity)
         }
+//        .environmentObject(roundsData)
+
         Divider()
             .frame(height: 3)
             .frame(width: 300)
             .overlay(.blue)
+        
     }
 }
 

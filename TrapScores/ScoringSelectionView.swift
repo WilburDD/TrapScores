@@ -45,6 +45,7 @@ struct ScoringSelectionView: View {
                 Spacer()
             }
         }
+//        .environmentObject(roundsData)
     }
 }
 

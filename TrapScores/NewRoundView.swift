@@ -12,8 +12,6 @@ import AVFoundation
 
 struct NewRoundView: View {
     
-    let rounds: [RoundEntity]
-    
     @EnvironmentObject var roundsData: RoundsDataStack
     @State private var showAlert: Bool = false
     
@@ -46,11 +44,11 @@ struct NewRoundView: View {
                         }))
                 })
                 Spacer()
-                Text("\(roundsData.selectedRange)").font(.title).fontWeight(.bold)
-                Spacer()
-                NavigationLink(destination: ScoringInfoView()) {
-                    Image(systemName: "questionmark.circle").font(.title)
+                VStack {
+                    Text("New Round").font(.title3.italic())
+                    Text("\(roundsData.selectedRange)").font(.title).fontWeight(.bold)
                 }
+                Spacer()
             }
             
             ProgressView("", value: Double(roundsData.shotCount), total: 25).accentColor(.black)
@@ -138,16 +136,16 @@ struct NewRoundView: View {
             } else {
                 EmptyView()
             }
+            
+            NavigationLink(
+                destination: EditView(),
+                isActive: $roundsData.roundComplete,
+                label: {})
+            
         }
         .multilineTextAlignment(.center)
         .navigationBarHidden(true)
         
-        NavigationLink(
-            destination: EditView(),
-            isActive: $roundsData.roundComplete,
-            label: {})
-        
-        .environmentObject(roundsData)
         .onAppear{
             roundsData.viewSet = true
             roundsData.scoringStarted = true
@@ -171,7 +169,7 @@ struct NewRoundView: View {
 
 struct NewRoundView_Previews: PreviewProvider {
     static var previews: some View {
-        NewRoundView(rounds: [])
+        NewRoundView()
             .environmentObject(RoundsDataStack())
     }
 }

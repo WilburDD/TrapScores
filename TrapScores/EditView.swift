@@ -14,18 +14,14 @@ struct EditView: View {
     @Environment(\.dismiss) var dismiss
     @State private var showAlert: Bool = false
     
-    
     var body: some View {
         VStack {
-//            Image ("TrapShooter")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
             Text ("Round Edit")
                 .font(.largeTitle).fontWeight(.bold).italic().multilineTextAlignment(.center)
                 .padding(5)
             HStack {
                 Button(action: {
-                    showAlert.toggle()
+                    showAlert = true
                 }, label: {
                     Text("DISCARD")
                 })
@@ -42,6 +38,8 @@ struct EditView: View {
                         secondaryButton: .destructive(Text("DISCARD Data"), action: {
                             roundsData.clearData()
                             roundsData.editDone = true
+                            showAlert = false
+                            roundsData.posSelected = false
                             dismiss()
                         }))
                 })
@@ -73,7 +71,7 @@ struct EditView: View {
                 .clipShape(Capsule())
             }
             .padding(20)
-            Text ("Tap on Position Score or Range selection\nto change if desired.\nThen press SAVE or DISCARD. ")
+            Text ("Tap on Position Score or Range selection\nto change if desired.\nYou can also enter Comment.\nThen press SAVE or DISCARD. ")
                 .font(.system(size: (18.0), weight: .bold))
                 .multilineTextAlignment(.center)
             RangeSelectionView()
@@ -90,94 +88,107 @@ struct EditView: View {
                     .multilineTextAlignment(.center)
                     .padding()
             })
-                HStack {
-                    ZStack {
-                        Text ("\(roundsData.posCount[0])")
-                            .font(.largeTitle).underline().fontWeight(.bold)
-                        Picker("", selection: $roundsData.posCount[0]) {
-                            Text("0").tag(0)
-                            Text("1").tag(1)
-                            Text("2").tag(2)
-                            Text("3").tag(3)
-                            Text("4").tag(4)
-                            Text("5").tag(5)
-                                .pickerStyle(MenuPickerStyle())
-                        }
-                        .opacity(0.1)
+            HStack {
+                ZStack {
+                    Text ("\(roundsData.posCount[0])")
+                        .font(.largeTitle).underline().fontWeight(.bold)
+                    Picker("", selection: $roundsData.posCount[0]) {
+                        Text("0").tag(0)
+                        Text("1").tag(1)
+                        Text("2").tag(2)
+                        Text("3").tag(3)
+                        Text("4").tag(4)
+                        Text("5").tag(5)
+                            .pickerStyle(MenuPickerStyle())
                     }
-                    Spacer()
-                    ZStack {
-                        Text ("\(roundsData.posCount[1])")
-                            .font(.largeTitle).underline().fontWeight(.bold)
-                        Picker("", selection: $roundsData.posCount[1]) {
-                            Text("0").tag(0)
-                            Text("1").tag(1)
-                            Text("2").tag(2)
-                            Text("3").tag(3)
-                            Text("4").tag(4)
-                            Text("5").tag(5)
-                                .pickerStyle(MenuPickerStyle())
-                        }
-                        .opacity(0.1)
-                    }
-                    Spacer()
-                    ZStack {
-                        Text ("\(roundsData.posCount[2])")
-                            .font(.largeTitle).underline().fontWeight(.bold)
-                        Picker("", selection: $roundsData.posCount[2]) {
-                            Text("0").tag(0)
-                            Text("1").tag(1)
-                            Text("2").tag(2)
-                            Text("3").tag(3)
-                            Text("4").tag(4)
-                            Text("5").tag(5)
-                                .pickerStyle(MenuPickerStyle())
-                        }
-                        .opacity(0.1)
-                    }
-                    Spacer()
-                    ZStack {
-                        Text ("\(roundsData.posCount[3])")
-                            .font(.largeTitle).underline().fontWeight(.bold)
-                        Picker("", selection: $roundsData.posCount[3]) {
-                            Text("0").tag(0)
-                            Text("1").tag(1)
-                            Text("2").tag(2)
-                            Text("3").tag(3)
-                            Text("4").tag(4)
-                            Text("5").tag(5)
-                                .pickerStyle(MenuPickerStyle())
-                        }
-                        .opacity(0.1)
-                    }
-                    Spacer()
-                    ZStack {
-                        Text ("\(roundsData.posCount[4])")
-                            .font(.largeTitle).underline().fontWeight(.bold)
-                        Picker("", selection: $roundsData.posCount[4]) {
-                            Text("0").tag(0)
-                            Text("1").tag(1)
-                            Text("2").tag(2)
-                            Text("3").tag(3)
-                            Text("4").tag(4)
-                            Text("5").tag(5)
-                                .pickerStyle(MenuPickerStyle())
-                        }
-                        .opacity(0.1)
-                    }
+                    .opacity(0.1)
                 }
-                .padding()
                 Spacer()
-                Text("\(roundsData.roundDate .formatDate())")
-
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                ZStack {
+                    Text ("\(roundsData.posCount[1])")
+                        .font(.largeTitle).underline().fontWeight(.bold)
+                    Picker("", selection: $roundsData.posCount[1]) {
+                        Text("0").tag(0)
+                        Text("1").tag(1)
+                        Text("2").tag(2)
+                        Text("3").tag(3)
+                        Text("4").tag(4)
+                        Text("5").tag(5)
+                            .pickerStyle(MenuPickerStyle())
+                    }
+                    .opacity(0.1)
+                }
+                Spacer()
+                ZStack {
+                    Text ("\(roundsData.posCount[2])")
+                        .font(.largeTitle).underline().fontWeight(.bold)
+                    Picker("", selection: $roundsData.posCount[2]) {
+                        Text("0").tag(0)
+                        Text("1").tag(1)
+                        Text("2").tag(2)
+                        Text("3").tag(3)
+                        Text("4").tag(4)
+                        Text("5").tag(5)
+                            .pickerStyle(MenuPickerStyle())
+                    }
+                    .opacity(0.1)
+                }
+                Spacer()
+                ZStack {
+                    Text ("\(roundsData.posCount[3])")
+                        .font(.largeTitle).underline().fontWeight(.bold)
+                    Picker("", selection: $roundsData.posCount[3]) {
+                        Text("0").tag(0)
+                        Text("1").tag(1)
+                        Text("2").tag(2)
+                        Text("3").tag(3)
+                        Text("4").tag(4)
+                        Text("5").tag(5)
+                            .pickerStyle(MenuPickerStyle())
+                    }
+                    .opacity(0.1)
+                }
+                Spacer()
+                ZStack {
+                    Text ("\(roundsData.posCount[4])")
+                        .font(.largeTitle).underline().fontWeight(.bold)
+                    Picker("", selection: $roundsData.posCount[4]) {
+                        Text("0").tag(0)
+                        Text("1").tag(1)
+                        Text("2").tag(2)
+                        Text("3").tag(3)
+                        Text("4").tag(4)
+                        Text("5").tag(5)
+                            .pickerStyle(MenuPickerStyle())
+                    }
+                    .opacity(0.1)
+                }
+            }
+            .padding()
             Spacer()
+            Text("\(roundsData.roundDate .formatDate())")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            Spacer()
+            
+            NavigationLink(
+                destination: OpeningTabView(),
+                isActive: $roundsData.editDone,
+                label: {})
+            
         }
         .navigationBarHidden(true)
-        .environmentObject(roundsData)
-        .fullScreenCover(isPresented: $roundsData.editDone) {
-            AllRoundsView()
-        }
+        
+
+        //            .environmentObject(roundsData)
+        
+        //        NavigationLink(
+        //            destination: OpeningTabView(),
+        //            isActive: $roundsData.editDone,
+        //            label: {})
+        //
+        //        .fullScreenCover(isPresented: $roundsData.editDone) {
+        //            AllRoundsView()
+        //        }        
     }
 }
 

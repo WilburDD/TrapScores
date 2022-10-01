@@ -7,31 +7,28 @@
 
 import SwiftUI
 
-struct RoundsFooter: View {
+struct RoundsHeader: View {
     
     @EnvironmentObject var roundsData: RoundsDataStack
     
     var body:  some View{
         VStack {
-            Divider()
+            HStack {
+                Text("Averages")
+                Spacer()
+                Text("Rounds: \(roundsData.totalRnds)")
+            }
+            .font(.title2)
             HStack {
                 HStack {
                     Text("\(roundsData.pos1Avg, specifier: "%.1f")")
                     Spacer()
-                }
-                HStack {
                     Text("\(roundsData.pos2Avg, specifier: "%.1f")")
                     Spacer()
-                }
-                HStack {
                     Text("\(roundsData.pos3Avg, specifier: "%.1f")")
                     Spacer()
-                }
-                HStack {
                     Text("\(roundsData.pos4Avg, specifier: "%.1f")")
                     Spacer()
-                }
-                HStack {
                     Text("\(roundsData.pos5Avg, specifier: "%.1f")")
                     Spacer()
                 }
@@ -39,22 +36,36 @@ struct RoundsFooter: View {
                     .fontWeight(.bold)
             }
             .font(.title2.italic())
-            .padding(.leading)
-            .padding(.trailing)
-            HStack {
-                Text("Running Averages").font(.headline.italic())
-                Spacer()
-                Text("Total rounds: \(roundsData.totalRnds)").font(.title2)
-            }
-            .padding(.leading)
-            .padding(.trailing)
+            .padding(.bottom, 0)
         }
+        .padding(.leading)
+        .padding(.trailing)
+        CustomDivider()
         .environmentObject(roundsData)
+    }
+}
+
+struct CustomDivider: View {
+    let color: Color
+    let height: CGFloat
+    
+    init(color: Color = .blue.opacity(1.0),
+         height: CGFloat = 2.0) {
+        self.color = color
+        self.height = height
+    }
+    
+    var body: some View {
+        Rectangle()
+            .fill(color)
+            .frame(height: height)
+            .edgesIgnoringSafeArea(.horizontal)
+        
     }
 }
 
 struct RoundsFooter_Previews: PreviewProvider {
     static var previews: some View {
-        RoundsFooter()
+        RoundsHeader()
     }
 }

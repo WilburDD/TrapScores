@@ -11,7 +11,6 @@ struct ScoringButtonsView: View {
     
     @EnvironmentObject var roundsData: RoundsDataStack
     
-    
     var body: some View {
         HStack{
             Spacer()

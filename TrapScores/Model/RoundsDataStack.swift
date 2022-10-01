@@ -28,6 +28,7 @@ class RoundsDataStack: ObservableObject {
     @Published var roundTotal = 0
     @Published var posLoc = 0
     @Published var posSelected = false
+    @Published var posNotSelected = true
     @Published var resetVolume = false
     @Published var scoringStarted = false
     @Published var viewSet = false
@@ -251,6 +252,7 @@ class RoundsDataStack: ObservableObject {
 //                self.turnOffClicker()
                 self.viewSet = false
 //                self.resetVolume.toggle()
+                self.scoringStarted = true
                 self.posSelected = true
             }
         }

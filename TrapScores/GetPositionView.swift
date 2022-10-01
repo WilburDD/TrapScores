@@ -14,7 +14,6 @@ struct GetPositionView: View {
     @EnvironmentObject var roundsData: RoundsDataStack
     
     var body: some View {
-        
         VStack{
             Spacer().frame(height: 50)
             Text("Range?")
@@ -85,12 +84,16 @@ struct GetPositionView: View {
                 .italic()
                 .multilineTextAlignment(.center)
                 .font(.title2)
+                .navigationBarHidden(true)
+            //                .environmentObject(roundsData)
+            
             NavigationLink(
-                destination: NewRoundView(rounds: Array(roundsData.roundsData)),
+                destination: NewRoundView(),
                 isActive: $roundsData.posSelected,
                 label: {})
-            .environmentObject(roundsData)
+            
             .onAppear{
+                roundsData.clearData()
                 roundsData.seePos = [0.3, 0.3, 0.3, 0.3, 0.3]
                 roundsData.clickerConfirm = true
                 roundsData.turnOnClicker()
@@ -123,7 +126,7 @@ extension Button {
 
 struct GetPositionView_Previews: PreviewProvider {
     static var previews: some View {
-            GetPositionView()
-                .environmentObject(RoundsDataStack())
+        GetPositionView()
+            .environmentObject(RoundsDataStack())
     }
 }

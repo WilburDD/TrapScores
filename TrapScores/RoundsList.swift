@@ -38,7 +38,7 @@ struct RoundsList: View {
                 Text("\(item.total)")
                     .fontWeight(.bold)
             }
-            .font(.title)
+            .font(.title2)
             .frame(
                 minWidth: 0,
                 maxWidth: .infinity,

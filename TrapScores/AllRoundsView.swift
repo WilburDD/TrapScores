@@ -12,11 +12,9 @@ import MediaPlayer
 
 struct AllRoundsView: View {
     
-    @StateObject var roundsData: RoundsDataStack = RoundsDataStack()
+    @EnvironmentObject var roundsData: RoundsDataStack
     
     var body: some View {
-        
-        NavigationView {
             VStack{
                 HStack {
                     Button(action: {
@@ -44,22 +42,12 @@ struct AllRoundsView: View {
                         Text("\(roundsData.selectedRange)")
                             .font(.title)
                             .fontWeight(.bold)
+                            .padding(2)
                     })
                     Spacer()
-                    NavigationLink(destination: GetPositionView()) {
-                        Text("New Round")
-                            .font(.headline)
-                            .padding(10)
-                            .background(Color.blue)
-                            .foregroundColor(Color.white)
-                            .clipShape(Capsule())
-                    }
-                    .onTapGesture {
-                        roundsData.clearData()
-                    }
                 }
                 .padding(10)
-                Section(footer: RoundsFooter()) {
+                Section(header: RoundsHeader()) {
                     List {
                         ForEach(roundsData.roundsData, id: \.self) { item in
                             RoundsList(item: item)
@@ -77,9 +65,8 @@ struct AllRoundsView: View {
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }
-        .environmentObject(roundsData)
     }
-}
+
 
 struct RoundsView_Previews: PreviewProvider {
     static var previews: some View {

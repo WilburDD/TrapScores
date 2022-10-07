@@ -7,11 +7,18 @@
 
 import SwiftUI
 import CoreData
+import Charts
 
 struct GraphView: View {
     
     @EnvironmentObject var roundsData: RoundsDataStack
-
+    
+    let yValues = stride(from: 0, to: 5, by: 1).map { $0 }
+    
+    let graphTitle = ["Pos 1", "Pos 2", "Pos 3", "Pos 4", "Pos 5"]
+    let graphOrder = ["item.pos1", "item.pos2", "item.pos3", "item.pos4", "item.pos5"]
+    let graphMark = ["pos1Avg", "pos2Avg", "pos3Avg", "pos4Avg", "pos5Avg"]
+    
     var body: some View {
         VStack {
             HStack {
@@ -34,7 +41,7 @@ struct GraphView: View {
                                 roundsData.contOpactity = 0.5
                                 roundsData.amerOpactity = 1.0
                             }}}
-                    roundsData.fetchRounds()
+                    roundsData.fetchGraphs()
                     roundsData.calcAvgs()
                 }, label: {
                     Text("\(roundsData.selectedRange)")
@@ -46,8 +53,210 @@ struct GraphView: View {
             }
             .padding(10)
             Spacer()
-        Text("Graph View")
+            if #available(iOS 16.0, *) {
+                HStack (spacing: 0) {
+                    Text("Total")
+                        .rotationEffect(.degrees(-90))
+                        .fontWeight(.bold)
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .numeric, time: .shortened)),
+                                y: .value("", item.total)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            
+                            RuleMark(y:  .value("Average", roundsData.totalAvg))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .chartYScale(domain: 0...25)
+                    //                    .chartXAxis{
+                    //                        AxisMarks (values: .stride (by: .day)) {
+                    //                            AxisGridLine()
+                    //                            AxisValueLabel(format: .dateTime.day())
+                    //                        }}
+                    Text("Avg\n\(roundsData.totalAvg, specifier: "%.1f")")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                }
+                
+                //                ForEach((0...4), id: \.self) { count in
+                //                    HStack (spacing: 0) {
+                //                        Text("\(graphTitle[count])")
+                //                            .rotationEffect(.degrees(-90))
+                //                        Chart {
+                //                            ForEach(roundsData.roundsData, id: \.self) { item in
+                //                                LineMark (
+                //                                    x: .value("", item.date!.formatted(date: .long, time: .shortened)),
+                //                                    y: .value("Score", graphOrder)
+                //                                )
+                //                                .foregroundStyle(Color.blue)
+                //                                .symbol(Circle())
+                //                                RuleMark(y:  .value("Average", roundsData.pos1Avg))
+                //                                    .foregroundStyle(.red)
+                //                            }
+                //                        }
+                //                        Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")")
+                //                            .foregroundColor(.red)
+                //                            .padding(.trailing)
+                //                }
+                //                        Text("Avg")
+                //                            .foregroundColor(.red)
+                //                            .rotationEffect(.degrees(90))
+                
+                
+                
+                
+                HStack{
+                    Text("Pos 1")
+                        .rotationEffect(.degrees(-90))
+                        .fontWeight(.bold)
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .long, time: .shortened)),
+                                y: .value("Score", item.pos1)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.pos1Avg))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .chartYScale(domain: 0...5)
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: yValues)  // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                }
+                HStack{
+                    Text("Pos 2")
+                        .rotationEffect(.degrees(-90))
+                        .fontWeight(.bold)
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .long, time: .shortened)),
+                                y: .value("", item.pos2)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.pos2Avg))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .chartYScale(domain: 0...5)
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: yValues)  // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    Text("Avg\n\(roundsData.pos2Avg, specifier: "%.1f")")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                }
+                HStack{
+                    Text("Pos 3")
+                        .rotationEffect(.degrees(-90))
+                        .fontWeight(.bold)
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .numeric, time: .shortened)),
+                                y: .value("", item.pos3)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.pos3Avg))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .chartYScale(domain: 0...5)
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: yValues)  // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    Text("Avg\n\(roundsData.pos3Avg, specifier: "%.1f")")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                }
+                HStack{
+                    Text("Pos 4")
+                        .rotationEffect(.degrees(-90))
+                        .fontWeight(.bold)
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .long, time: .shortened)),
+                                y: .value("", item.pos4)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.pos4Avg))
+                                .foregroundStyle(.red)
+                            
+                        }
+                    }
+                    .chartYScale(domain: 0...5)
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: yValues)  // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    Text("Avg\n\(roundsData.pos4Avg, specifier: "%.1f")")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                }
+                HStack{
+                    Text("Pos 5")
+                        .rotationEffect(.degrees(-90))
+                        .fontWeight(.bold)
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .long, time: .shortened)),
+                                y: .value("", item.pos5)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.pos5Avg))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .chartYScale(domain: 0...5)
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: yValues)  // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    Text("Avg\n\(roundsData.pos5Avg, specifier: "%.1f")")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                }
+            } else {
+                Text("Grahps only available with iOS 16 or higher.")
+            }
             Spacer()
+                .onAppear{
+                    roundsData.fetchGraphs()
+                }
         }
     }
 }

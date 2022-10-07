@@ -59,8 +59,11 @@ struct AllRoundsView: View {
                             roundsData.calcAvgs()
                         })
                     }
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
+                .onAppear{
+                    roundsData.fetchRounds()
+                }
             }
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)

@@ -11,7 +11,7 @@ import CloudKit
 import AVFoundation
 import MediaPlayer
 
-class RoundsDataStack: ObservableObject {
+class RoundsDataStack: ObservableObject, Identifiable {
     
     @Published var roundsData: [RoundEntity] = []
     
@@ -114,6 +114,19 @@ class RoundsDataStack: ObservableObject {
         }
     }
     
+    func fetchGraphs() {
+        let request = NSFetchRequest<RoundEntity>(entityName: "RoundEntity")
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        let predicate = NSPredicate(format: "range == %@", selectedRange)
+        request.predicate = predicate
+        request.sortDescriptors = [sortDescriptor]
+        do {
+            roundsData = try managedObjectContext.fetch(request)
+        } catch let error {
+            print ("Error fetching. \(error)")
+        }
+    }
+    
     func saveRounds() {
         guard managedObjectContext.hasChanges else { return }
         do {
@@ -124,12 +137,12 @@ class RoundsDataStack: ObservableObject {
         }
     }
     
-    func addRound(range: String, comment: String, date: Date, id: UUID, pos1: Int64, pos2: Int64, pos3: Int64, pos4: Int64, pos5: Int64, total: Int64 ) {
+    func addRound(range: String, comment: String, date: Date, pos1: Int64, pos2: Int64, pos3: Int64, pos4: Int64, pos5: Int64, total: Int64 ) {
         let newRound = RoundEntity(context: managedObjectContext)
         newRound.range = range
         newRound.comment = comment
         newRound.date = date
-        newRound.id = id
+//        newRound.id = id
         newRound.pos1 = pos1
         newRound.pos2 = pos2
         newRound.pos3 = pos3

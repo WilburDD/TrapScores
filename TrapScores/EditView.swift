@@ -49,7 +49,6 @@ struct EditView: View {
                         range: roundsData.selectedRange,
                         comment: roundsData.comment,
                         date: Date.now,
-                        id: UUID(),
                         pos1: Int64(roundsData.posCount[0]),
                         pos2: Int64(roundsData.posCount[1]),
                         pos3: Int64(roundsData.posCount[2]),

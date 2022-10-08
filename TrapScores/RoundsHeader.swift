@@ -18,21 +18,22 @@ struct RoundsHeader: View {
                 Spacer()
                 Text("Rounds: \(roundsData.totalRnds)")
             }
+            .fontWeight(.bold)
             .font(.title2)
             HStack {
                 HStack {
-                    Text("\(roundsData.pos1Avg, specifier: "%.1f")")
+                    Text("\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos1Avg/5*100, specifier: "%.0f")%")
                     Spacer()
-                    Text("\(roundsData.pos2Avg, specifier: "%.1f")")
+                    Text("\(roundsData.pos2Avg, specifier: "%.1f")\n\(roundsData.pos2Avg/5*100, specifier: "%.0f")%")
                     Spacer()
-                    Text("\(roundsData.pos3Avg, specifier: "%.1f")")
+                    Text("\(roundsData.pos3Avg, specifier: "%.1f")\n\(roundsData.pos3Avg/5*100, specifier: "%.0f")%")
                     Spacer()
-                    Text("\(roundsData.pos4Avg, specifier: "%.1f")")
+                    Text("\(roundsData.pos5Avg, specifier: "%.1f")\n\(roundsData.pos4Avg/5*100, specifier: "%.0f")%")
                     Spacer()
-                    Text("\(roundsData.pos5Avg, specifier: "%.1f")")
+                    Text("\(roundsData.pos5Avg, specifier: "%.1f")\n\(roundsData.pos5Avg/5*100, specifier: "%.0f")%")
                     Spacer()
                 }
-                Text("\(roundsData.totalAvg, specifier: "%.1f")")
+                Text("\(roundsData.totalAvg, specifier: "%.1f")\n\(roundsData.totalAvg/25*100, specifier: "%.0f")%")
                     .fontWeight(.bold)
             }
             .font(.title2.italic())

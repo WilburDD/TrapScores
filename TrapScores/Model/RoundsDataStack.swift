@@ -51,6 +51,14 @@ class RoundsDataStack: ObservableObject, Identifiable {
     @Published var totalAvg = Double (0.0)
     @Published var totalRnds = 0
     
+    @Published var pos1Pct = Double (0.0)
+    @Published var pos2Pct = Double (0.0)
+    @Published var pos3Pct = Double (0.0)
+    @Published var pos4Pct = Double (0.0)
+    @Published var pos5Pct = Double (0.0)
+    @Published var totalPct = Double (0.0)
+
+    
     private var outputVolumeObserve: NSKeyValueObservation?
     private var audioSession = AVAudioSession.sharedInstance()
     private var priorVolume = 0.5
@@ -197,6 +205,13 @@ class RoundsDataStack: ObservableObject, Identifiable {
             pos4Avg = Double(roundsData.reduce(0, {$0 + $1.pos4}))/Double(roundsData.count)
             pos5Avg = Double(roundsData.reduce(0, {$0 + $1.pos5}))/Double(roundsData.count)
             totalAvg = Double(roundsData.reduce(0, {$0 + $1.total}))/Double(roundsData.count)
+            
+            pos1Pct = pos1Avg / 5.0
+            pos2Pct = pos2Avg / 5.0
+            pos3Pct = pos3Avg / 5.0
+            pos4Pct = pos4Avg / 5.0
+            pos5Pct = pos5Avg / 5.0
+            totalPct = totalAvg / 25.0
         }
         totalRnds = roundsData.count
         if totalRnds == 0 {

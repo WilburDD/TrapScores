@@ -14,7 +14,7 @@ struct GraphView: View {
     @EnvironmentObject var roundsData: RoundsDataStack
     
     let yValues = stride(from: 0, to: 5, by: 1).map { $0 }
-    
+        
     let graphTitle = ["Pos 1", "Pos 2", "Pos 3", "Pos 4", "Pos 5"]
     let graphOrder = ["item.pos1", "item.pos2", "item.pos3", "item.pos4", "item.pos5"]
     let graphMark = ["pos1Avg", "pos2Avg", "pos3Avg", "pos4Avg", "pos5Avg"]
@@ -72,12 +72,7 @@ struct GraphView: View {
                         }
                     }
                     .chartYScale(domain: 0...25)
-                    //                    .chartXAxis{
-                    //                        AxisMarks (values: .stride (by: .day)) {
-                    //                            AxisGridLine()
-                    //                            AxisValueLabel(format: .dateTime.day())
-                    //                        }}
-                    Text("Avg\n\(roundsData.totalAvg, specifier: "%.1f")")
+                    Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.totalAvg/25*100, specifier: "%.0f")%")
                         .foregroundColor(.red)
                         .padding(.trailing)
                 }
@@ -133,7 +128,7 @@ struct GraphView: View {
                         AxisMarks {
                             AxisGridLine()
                         }}
-                    Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")")
+                    Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos1Avg/5*100, specifier: "%.0f")%")
                         .foregroundColor(.red)
                         .padding(.trailing)
                 }
@@ -161,7 +156,7 @@ struct GraphView: View {
                         AxisMarks {
                             AxisGridLine()
                         }}
-                    Text("Avg\n\(roundsData.pos2Avg, specifier: "%.1f")")
+                    Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos2Avg/5*100, specifier: "%.0f")%")
                         .foregroundColor(.red)
                         .padding(.trailing)
                 }
@@ -189,7 +184,7 @@ struct GraphView: View {
                         AxisMarks {
                             AxisGridLine()
                         }}
-                    Text("Avg\n\(roundsData.pos3Avg, specifier: "%.1f")")
+                    Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos3Avg/5*100, specifier: "%.0f")%")
                         .foregroundColor(.red)
                         .padding(.trailing)
                 }
@@ -218,7 +213,7 @@ struct GraphView: View {
                         AxisMarks {
                             AxisGridLine()
                         }}
-                    Text("Avg\n\(roundsData.pos4Avg, specifier: "%.1f")")
+                    Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos4Avg/5*100, specifier: "%.0f")%")
                         .foregroundColor(.red)
                         .padding(.trailing)
                 }
@@ -246,7 +241,7 @@ struct GraphView: View {
                         AxisMarks {
                             AxisGridLine()
                         }}
-                    Text("Avg\n\(roundsData.pos5Avg, specifier: "%.1f")")
+                    Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos5Avg/5*100, specifier: "%.0f")%")
                         .foregroundColor(.red)
                         .padding(.trailing)
                 }

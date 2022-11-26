@@ -14,7 +14,7 @@ struct GraphView: View {
     @EnvironmentObject var roundsData: RoundsDataStack
     
     let yValues = stride(from: 0, to: 5, by: 1).map { $0 }
-        
+    
     let graphTitle = ["Pos 1", "Pos 2", "Pos 3", "Pos 4", "Pos 5"]
     let graphOrder = ["item.pos1", "item.pos2", "item.pos3", "item.pos4", "item.pos5"]
     let graphMark = ["pos1Avg", "pos2Avg", "pos3Avg", "pos4Avg", "pos5Avg"]
@@ -75,35 +75,7 @@ struct GraphView: View {
                     Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.totalAvg/25*100, specifier: "%.0f")%")
                         .foregroundColor(.red)
                         .padding(.trailing)
-                }
-                
-                //                ForEach((0...4), id: \.self) { count in
-                //                    HStack (spacing: 0) {
-                //                        Text("\(graphTitle[count])")
-                //                            .rotationEffect(.degrees(-90))
-                //                        Chart {
-                //                            ForEach(roundsData.roundsData, id: \.self) { item in
-                //                                LineMark (
-                //                                    x: .value("", item.date!.formatted(date: .long, time: .shortened)),
-                //                                    y: .value("Score", graphOrder)
-                //                                )
-                //                                .foregroundStyle(Color.blue)
-                //                                .symbol(Circle())
-                //                                RuleMark(y:  .value("Average", roundsData.pos1Avg))
-                //                                    .foregroundStyle(.red)
-                //                            }
-                //                        }
-                //                        Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")")
-                //                            .foregroundColor(.red)
-                //                            .padding(.trailing)
-                //                }
-                //                        Text("Avg")
-                //                            .foregroundColor(.red)
-                //                            .rotationEffect(.degrees(90))
-                
-                
-                
-                
+                }            
                 HStack{
                     Text("Pos 1")
                         .rotationEffect(.degrees(-90))

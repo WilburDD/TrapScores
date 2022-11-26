@@ -40,7 +40,7 @@ struct EditView: View {
                             roundsData.editDone = true
                             showAlert = false
                             roundsData.posSelected = false
-                            dismiss()
+                            //                            dismiss()
                         }))
                 })
                 Spacer()
@@ -68,6 +68,10 @@ struct EditView: View {
                 .background(.blue)
                 .foregroundColor(.white)
                 .clipShape(Capsule())
+                
+                .navigationDestination(isPresented: $roundsData.editDone, destination: {
+                    OpeningTabView()
+                })
             }
             .padding(20)
             Text ("Tap on Position Score or Range selection\nto change if desired.\nYou can also enter Comment.\nThen press SAVE or DISCARD. ")
@@ -168,26 +172,8 @@ struct EditView: View {
             Text("\(roundsData.roundDate .formatDate())")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             Spacer()
-            
-            NavigationLink(
-                destination: OpeningTabView(),
-                isActive: $roundsData.editDone,
-                label: {})
-            
         }
-        .navigationBarHidden(true)
-        
-
-        //            .environmentObject(roundsData)
-        
-        //        NavigationLink(
-        //            destination: OpeningTabView(),
-        //            isActive: $roundsData.editDone,
-        //            label: {})
-        //
-        //        .fullScreenCover(isPresented: $roundsData.editDone) {
-        //            AllRoundsView()
-        //        }        
+        .navigationBarHidden(true)       
     }
 }
 

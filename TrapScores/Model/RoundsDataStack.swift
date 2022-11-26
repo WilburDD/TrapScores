@@ -42,6 +42,8 @@ class RoundsDataStack: ObservableObject, Identifiable {
     @Published var clickerOpacity = 1.0
     @Published var phoneOpacity = 0.3
     @Published var phoneScoring = false
+    @Published var selection = ""
+    @Published var path = NavigationPath()
     
     @Published var pos1Avg = Double (0.0)
     @Published var pos2Avg = Double (0.0)
@@ -57,7 +59,7 @@ class RoundsDataStack: ObservableObject, Identifiable {
     @Published var pos4Pct = Double (0.0)
     @Published var pos5Pct = Double (0.0)
     @Published var totalPct = Double (0.0)
-
+    
     
     private var outputVolumeObserve: NSKeyValueObservation?
     private var audioSession = AVAudioSession.sharedInstance()
@@ -150,7 +152,7 @@ class RoundsDataStack: ObservableObject, Identifiable {
         newRound.range = range
         newRound.comment = comment
         newRound.date = date
-//        newRound.id = id
+        //        newRound.id = id
         newRound.pos1 = pos1
         newRound.pos2 = pos2
         newRound.pos3 = pos3
@@ -257,7 +259,7 @@ class RoundsDataStack: ObservableObject, Identifiable {
         outputVolumeObserve = audioSession.observe(\.outputVolume) { [self] (session, value) in
             if self.viewSet == false {
                 self.clickCount += 1
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
                     if self.clickCount == 1 {
                         self.hitScore = true
                         self.countShot()
@@ -277,9 +279,9 @@ class RoundsDataStack: ObservableObject, Identifiable {
         if self.clickerConfirm == true && self.scoringStarted == false {
             outputVolumeObserve = audioSession.observe(\.outputVolume) { (audioSession, changes) in
                 self.clickerConfirm = false
-//                self.turnOffClicker()
+                //                self.turnOffClicker()
                 self.viewSet = false
-//                self.resetVolume.toggle()
+                //                self.resetVolume.toggle()
                 self.scoringStarted = true
                 self.posSelected = true
             }
@@ -298,4 +300,8 @@ class RoundsDataStack: ObservableObject, Identifiable {
             try audioSession.setActive(false)
         } catch {}
     }
+    
+    //    func popToRoot() {
+    //        path.removeLast(path.count)
+    //    }
 }

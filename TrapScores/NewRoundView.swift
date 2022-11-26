@@ -136,16 +136,12 @@ struct NewRoundView: View {
             } else {
                 EmptyView()
             }
-            
-            NavigationLink(
-                destination: EditView(),
-                isActive: $roundsData.roundComplete,
-                label: {})
-            
         }
+        .navigationDestination(isPresented: $roundsData.roundComplete, destination: {
+            EditView()
+        })
         .multilineTextAlignment(.center)
         .navigationBarHidden(true)
-        
         .onAppear{
             roundsData.viewSet = true
             roundsData.scoringStarted = true

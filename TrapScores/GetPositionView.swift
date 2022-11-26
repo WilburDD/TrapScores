@@ -79,27 +79,24 @@ struct GetPositionView: View {
             Spacer()
             ScoringSelectionView()
             Spacer()
-            Text("Press clicker or iPhone volume button AFTER selecting Range & Position to start scoring.")
+            Text("Press Clicker or iPhone volume button AFTER selecting Range & Position to start scoring.")
                 .fontWeight(.bold)
                 .italic()
                 .multilineTextAlignment(.center)
                 .font(.title2)
                 .navigationBarHidden(true)
-            //                .environmentObject(roundsData)
-            
-            NavigationLink(
-                destination: NewRoundView(),
-                isActive: $roundsData.posSelected,
-                label: {})
-            
-            .onAppear{
-                roundsData.clearData()
-                roundsData.seePos = [0.3, 0.3, 0.3, 0.3, 0.3]
-                roundsData.clickerConfirm = true
-                roundsData.turnOnClicker()
-                MPVolumeView.setVolume()
-            }
+                .environmentObject(roundsData)
+                .onAppear{
+                    roundsData.clearData()
+                    roundsData.seePos = [0.3, 0.3, 0.3, 0.3, 0.3]
+                    roundsData.clickerConfirm = true
+                    roundsData.turnOnClicker()
+                    MPVolumeView.setVolume()
+                }
         }
+        .navigationDestination(isPresented: $roundsData.posSelected, destination: {
+            NewRoundView()
+        })
         .edgesIgnoringSafeArea(.top)
     }
 }

@@ -42,7 +42,7 @@ struct RoundsHeader: View {
         .padding(.leading)
         .padding(.trailing)
         CustomDivider()
-        .environmentObject(roundsData)
+            .environmentObject(roundsData)
     }
 }
 

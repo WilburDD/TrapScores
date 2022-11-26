@@ -12,58 +12,43 @@ struct OpeningTabView: View {
     
     @EnvironmentObject var roundsData: RoundsDataStack
     
-    //    @StateObject var roundsData: RoundsDataStack = RoundsDataStack()
-    
     var body: some View {
-        //        NavigationView {
-        if #available(iOS 16.0, *) {
-            NavigationStack {
-                TabView {
-                    AllRoundsView()
-                        .tabItem{
-                            Image(systemName: "list.bullet")
-                        }
-                    GraphView()
-                        .tabItem{
-                            Image(systemName: "chart.xyaxis.line")
-                        }
-                    GetPositionView()
-                        .tabItem{
-                            Image(systemName: "plus.square.fill")
-                        }
-                    ScoringInfoView()
-                        .tabItem{
-                            Image(systemName: "questionmark.circle")
-                        }
-                }
-                .accentColor(.blue)
+        NavigationStack {
+            //            TabView (selection: $roundsData.selection) {
+            TabView {
+                AllRoundsView()
+                    .tabItem{
+                        Image(systemName: "list.bullet")
+                        Text("Rounds")
+                    }
+                    .tag(0)
+                GraphView()
+                    .tabItem{
+                        Image(systemName: "chart.xyaxis.line")
+                        Text("Graphs")
+                    }
+                    .tag(1)
+                GetPositionView()
+                    .tabItem{
+                        Image(systemName: "plus.square.fill")
+                        Text("New Round")
+                    }
+                    .tag(2)
+                ScoringInfoView()
+                    .tabItem{
+                        Image(systemName: "questionmark.circle")
+                        Text("Info")
+                    }
+                    .tag(3)
             }
-        } else {
-            // Fallback on earlier versions
-            NavigationView {
-                TabView {
-                    AllRoundsView()
-                        .tabItem{
-                            Image(systemName: "list.bullet")
-                        }
-                    GraphView()
-                        .tabItem{
-                            Image(systemName: "chart.xyaxis.line")
-                        }
-                    GetPositionView()
-                        .tabItem{
-                            Image(systemName: "plus.square.fill")
-                        }
-                    ScoringInfoView()
-                        .tabItem{
-                            Image(systemName: "questionmark.circle")
-                        }
-                }
-                .accentColor(.blue)
-            }
+            .accentColor(.blue)
         }
     }
+    init() {
+        UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance.init(idiom: .unspecified)
+    }
 }
+
 
 struct OpeningTabView_Previews: PreviewProvider {
     static var previews: some View {

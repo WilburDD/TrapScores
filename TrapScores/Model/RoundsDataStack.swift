@@ -42,7 +42,7 @@ class RoundsDataStack: ObservableObject, Identifiable {
     @Published var clickerOpacity = 1.0
     @Published var phoneOpacity = 0.3
     @Published var phoneScoring = false
-    @Published var selection = ""
+    @Published var selection = 0
     @Published var path = NavigationPath()
     
     @Published var pos1Avg = Double (0.0)
@@ -301,7 +301,7 @@ class RoundsDataStack: ObservableObject, Identifiable {
         } catch {}
     }
     
-    //    func popToRoot() {
-    //        path.removeLast(path.count)
-    //    }
+        func popToRoot() {
+            path.removeLast(path.count)
+        }
 }

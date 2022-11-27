@@ -44,7 +44,6 @@ struct AllRoundsView: View {
                         .fontWeight(.bold)
                         .padding(2)
                 })
-                Spacer()
             }
             .padding(5)
             Section(header: RoundsHeader()) {

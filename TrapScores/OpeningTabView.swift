@@ -13,9 +13,8 @@ struct OpeningTabView: View {
     @EnvironmentObject var roundsData: RoundsDataStack
     
     var body: some View {
-        NavigationStack {
-            //            TabView (selection: $roundsData.selection) {
-            TabView {
+        NavigationStack(path: $roundsData.path) {
+            TabView (selection: $roundsData.selection) {
                 AllRoundsView()
                     .tabItem{
                         Image(systemName: "list.bullet")

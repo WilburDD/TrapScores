@@ -37,10 +37,10 @@ struct EditView: View {
                         primaryButton: .cancel(Text("Continue Edit")),
                         secondaryButton: .destructive(Text("DISCARD Data"), action: {
                             roundsData.clearData()
-                            roundsData.editDone = true
                             showAlert = false
                             roundsData.posSelected = false
-                            //                            dismiss()
+                            roundsData.editDone = true
+                            roundsData.selection = 0
                         }))
                 })
                 Spacer()
@@ -60,6 +60,7 @@ struct EditView: View {
                     roundsData.calcAvgs()
                     roundsData.clearData()
                     roundsData.editDone = true
+                    roundsData.selection = 0
                 }, label: {
                     Text("SAVE")
                 })
@@ -68,11 +69,8 @@ struct EditView: View {
                 .background(.blue)
                 .foregroundColor(.white)
                 .clipShape(Capsule())
-                
-                .navigationDestination(isPresented: $roundsData.editDone, destination: {
-                    OpeningTabView()
-                })
             }
+            
             .padding(20)
             Text ("Tap on Position Score or Range selection\nto change if desired.\nYou can also enter Comment.\nThen press SAVE or DISCARD. ")
                 .font(.system(size: (18.0), weight: .bold))
@@ -173,7 +171,10 @@ struct EditView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             Spacer()
         }
-        .navigationBarHidden(true)       
+        .navigationBarHidden(true)
+//        .navigationDestination(isPresented: $roundsData.editDone, destination: {
+//            OpeningTabView()
+//        })
     }
 }
 

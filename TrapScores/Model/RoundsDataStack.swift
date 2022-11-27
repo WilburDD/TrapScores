@@ -301,7 +301,7 @@ class RoundsDataStack: ObservableObject, Identifiable {
         } catch {}
     }
     
-        func popToRoot() {
-            path.removeLast(path.count)
-        }
+//        func popToRoot() {
+//            path.removeLast(path.count)
+//        }
 }

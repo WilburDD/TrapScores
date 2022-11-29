@@ -131,7 +131,7 @@ struct GraphView: View {
                     AxisMarks {
                         AxisGridLine()
                     }}
-                Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos2Avg/5*100, specifier: "%.0f")%")
+                Text("Avg\n\(roundsData.pos2Avg, specifier: "%.1f")\n\(roundsData.pos2Avg/5*100, specifier: "%.0f")%")
                     .foregroundColor(.red)
                     .padding(.trailing)
                     .multilineTextAlignment(.center)
@@ -160,7 +160,7 @@ struct GraphView: View {
                     AxisMarks {
                         AxisGridLine()
                     }}
-                Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos3Avg/5*100, specifier: "%.0f")%")
+                Text("Avg\n\(roundsData.pos3Avg, specifier: "%.1f")\n\(roundsData.pos3Avg/5*100, specifier: "%.0f")%")
                     .foregroundColor(.red)
                     .padding(.trailing)
                     .multilineTextAlignment(.center)
@@ -190,7 +190,7 @@ struct GraphView: View {
                     AxisMarks {
                         AxisGridLine()
                     }}
-                Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos4Avg/5*100, specifier: "%.0f")%")
+                Text("Avg\n\(roundsData.pos4Avg, specifier: "%.1f")\n\(roundsData.pos4Avg/5*100, specifier: "%.0f")%")
                     .foregroundColor(.red)
                     .padding(.trailing)
                     .multilineTextAlignment(.center)
@@ -219,7 +219,7 @@ struct GraphView: View {
                     AxisMarks {
                         AxisGridLine()
                     }}
-                Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos5Avg/5*100, specifier: "%.0f")%")
+                Text("Avg\n\(roundsData.pos5Avg, specifier: "%.1f")\n\(roundsData.pos5Avg/5*100, specifier: "%.0f")%")
                     .foregroundColor(.red)
                     .padding(.trailing)
                     .multilineTextAlignment(.center)

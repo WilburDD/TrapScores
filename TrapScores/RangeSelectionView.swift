@@ -13,6 +13,11 @@ struct RangeSelectionView: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            Text("Range?")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .italic()
             HStack {
                 Spacer()
                 Button(action: {

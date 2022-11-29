@@ -15,11 +15,6 @@ struct GetPositionView: View {
     
     var body: some View {
         VStack{
-            Spacer().frame(height: 50)
-            Text("Range?")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .italic()
             RangeSelectionView()
             ZStack {
                 Image("range")

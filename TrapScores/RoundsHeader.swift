@@ -16,7 +16,7 @@ struct RoundsHeader: View {
             HStack {
                 Text("Averages")
                 Spacer()
-                Text("Rounds: \(roundsData.totalRnds)")
+                Text("Rounds:  \(roundsData.totalRnds)")
             }
             .fontWeight(.bold)
             .font(.title2)

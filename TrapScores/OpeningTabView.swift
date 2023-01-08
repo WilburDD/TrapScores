@@ -21,6 +21,7 @@ struct OpeningTabView: View {
                         Text("Rounds")
                     }
                     .tag(0)
+
                 GraphView()
                     .tabItem{
                         Image(systemName: "chart.xyaxis.line")

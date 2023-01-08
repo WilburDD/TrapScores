@@ -16,7 +16,7 @@ struct AllRoundsView: View {
     
     var body: some View {
         VStack{
-            HStack {
+            HStack{
                 Button(action: {
                     if roundsData.selectedRange == "American" {
                         roundsData.selectedRange = "Continental"
@@ -44,8 +44,9 @@ struct AllRoundsView: View {
                         .fontWeight(.bold)
                         .padding(2)
                 })
+                Spacer()
             }
-            .padding(5)
+            .padding(10)
             Section(header: RoundsHeader()) {
                 List {
                     ForEach(roundsData.roundsData, id: \.self) { item in

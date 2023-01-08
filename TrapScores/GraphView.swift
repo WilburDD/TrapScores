@@ -13,7 +13,8 @@ struct GraphView: View {
     
     @EnvironmentObject var roundsData: RoundsDataStack
     
-    let yValues = stride(from: 0, to: 5, by: 1).map { $0 }
+    let yValues = stride(from: 0, to: 6, by: 1) .map { $0 }
+    let totalValues = stride(from: 0, to: 26, by: 5) .map { $0 }
     
     let graphTitle = ["Pos 1", "Pos 2", "Pos 3", "Pos 4", "Pos 5"]
     let graphOrder = ["item.pos1", "item.pos2", "item.pos3", "item.pos4", "item.pos5"]
@@ -49,186 +50,221 @@ struct GraphView: View {
                         .fontWeight(.bold)
                         .padding(2)
                 })
+                Spacer()
             }
             .padding(10)
-            HStack (spacing: 0) {
+            ZStack(alignment: .bottomLeading) {
+                HStack (spacing: 0) {
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .numeric, time: .shortened)),
+                                y: .value("", item.total)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.totalAvg))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: totalValues) // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    .chartPlotStyle { plotArea in
+                        plotArea
+                            .background(.gray.opacity(0.2))
+                    }
+                    Text("Avg\n\(roundsData.totalAvg, specifier: "%.1f")\n\(roundsData.totalAvg/25*100, specifier: "%.0f")%")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                        .multilineTextAlignment(.center)
+                }
                 Text("Total")
-                    .rotationEffect(.degrees(-90))
                     .fontWeight(.bold)
-                Chart {
-                    ForEach(roundsData.roundsData, id: \.self) { item in
-                        LineMark (
-                            x: .value("", item.date!.formatted(date: .numeric, time: .shortened)),
-                            y: .value("", item.total)
-                        )
-                        .foregroundStyle(Color.blue)
-                        .symbol(Circle())
-                        RuleMark(y:  .value("Average", roundsData.totalAvg))
-                            .foregroundStyle(.red)
-                    }
-                }
-                .chartYScale(domain: 0...25)
-                .chartXAxis{
-                    AxisMarks {
-                        AxisGridLine()
-                    }}
-                
-                Text("Avg\n\(roundsData.totalAvg, specifier: "%.1f")\n\(roundsData.totalAvg/25*100, specifier: "%.0f")%")
-                    .foregroundColor(.red)
-                    .padding(.trailing)
-                    .multilineTextAlignment(.center)
             }
-            HStack (spacing: 0) {
+            .padding(.leading, 5)
+            ZStack(alignment: .bottomLeading) {
+                HStack (spacing: 0) {
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .numeric, time: .shortened)),
+                                y: .value("Score", item.pos1)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.pos1Avg))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: yValues)  // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    .chartPlotStyle { plotArea in
+                        plotArea
+                            .background(.gray.opacity(0.2))
+                    }
+                    Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos1Avg/5*100, specifier: "%.0f")%")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                        .multilineTextAlignment(.center)
+                }
                 Text("Pos 1")
-                    .rotationEffect(.degrees(-90))
                     .fontWeight(.bold)
-                Chart {
-                    ForEach(roundsData.roundsData, id: \.self) { item in
-                        LineMark (
-                            x: .value("", item.date!.formatted(date: .numeric, time: .shortened)),
-                            y: .value("Score", item.pos1)
-                        )
-                        .foregroundStyle(Color.blue)
-                        .symbol(Circle())
-                        RuleMark(y:  .value("Average", roundsData.pos1Avg))
-                            .foregroundStyle(.red)
-                    }
-                }
-                .chartYScale(domain: 0...5)
-                .chartYAxis{
-                    AxisMarks(position: .trailing, values: yValues)  // << here !!
-                }
-                .chartXAxis{
-                    AxisMarks {
-                        AxisGridLine()
-                    }}
-                Text("Avg\n\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos1Avg/5*100, specifier: "%.0f")%")
-                    .foregroundColor(.red)
-                    .padding(.trailing)
-                    .multilineTextAlignment(.center)
             }
-            HStack (spacing: 0) {
+            .padding(.leading, 5)
+            ZStack(alignment: .bottomLeading) {
+                HStack (spacing: 0) {
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .numeric, time: .shortened)),
+                                y: .value("", item.pos2)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.pos2Avg))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: yValues)  // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    .chartPlotStyle { plotArea in
+                        plotArea
+                            .background(.gray.opacity(0.2))
+                    }
+                    Text("Avg\n\(roundsData.pos2Avg, specifier: "%.1f")\n\(roundsData.pos2Avg/5*100, specifier: "%.0f")%")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                        .multilineTextAlignment(.center)
+                }
                 Text("Pos 2")
-                    .rotationEffect(.degrees(-90))
                     .fontWeight(.bold)
-                Chart {
-                    ForEach(roundsData.roundsData, id: \.self) { item in
-                        LineMark (
-                            x: .value("", item.date!.formatted(date: .numeric, time: .shortened)),
-                            y: .value("", item.pos2)
-                        )
-                        .foregroundStyle(Color.blue)
-                        .symbol(Circle())
-                        RuleMark(y:  .value("Average", roundsData.pos2Avg))
-                            .foregroundStyle(.red)
-                    }
-                }
-                .chartYScale(domain: 0...5)
-                .chartYAxis{
-                    AxisMarks(position: .trailing, values: yValues)  // << here !!
-                }
-                .chartXAxis{
-                    AxisMarks {
-                        AxisGridLine()
-                    }}
-                Text("Avg\n\(roundsData.pos2Avg, specifier: "%.1f")\n\(roundsData.pos2Avg/5*100, specifier: "%.0f")%")
-                    .foregroundColor(.red)
-                    .padding(.trailing)
-                    .multilineTextAlignment(.center)
             }
-            HStack (spacing: 0) {
+            .padding(.leading, 5)
+            ZStack(alignment: .bottomLeading) {
+                HStack (spacing: 0) {
+                    
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .numeric, time: .shortened)),
+                                y: .value("", item.pos3)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.pos3Avg))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: yValues)  // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    .chartPlotStyle { plotArea in
+                        plotArea
+                            .background(.gray.opacity(0.2))
+                    }
+                    Text("Avg\n\(roundsData.pos3Avg, specifier: "%.1f")\n\(roundsData.pos3Avg/5*100, specifier: "%.0f")%")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                        .multilineTextAlignment(.center)
+                }
                 Text("Pos 3")
-                    .rotationEffect(.degrees(-90))
                     .fontWeight(.bold)
-                Chart {
-                    ForEach(roundsData.roundsData, id: \.self) { item in
-                        LineMark (
-                            x: .value("", item.date!.formatted(date: .numeric, time: .shortened)),
-                            y: .value("", item.pos3)
-                        )
-                        .foregroundStyle(Color.blue)
-                        .symbol(Circle())
-                        RuleMark(y:  .value("Average", roundsData.pos3Avg))
-                            .foregroundStyle(.red)
-                    }
-                }
-                .chartYScale(domain: 0...5)
-                .chartYAxis{
-                    AxisMarks(position: .trailing, values: yValues)  // << here !!
-                }
-                .chartXAxis{
-                    AxisMarks {
-                        AxisGridLine()
-                    }}
-                Text("Avg\n\(roundsData.pos3Avg, specifier: "%.1f")\n\(roundsData.pos3Avg/5*100, specifier: "%.0f")%")
-                    .foregroundColor(.red)
-                    .padding(.trailing)
-                    .multilineTextAlignment(.center)
             }
-            HStack (spacing: 0) {
+            .padding(.leading, 5)
+            ZStack(alignment: .bottomLeading) {
+                HStack (spacing: 0) {
+                    
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .long, time: .shortened)),
+                                y: .value("", item.pos4)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.pos4Avg))
+                                .foregroundStyle(.red)
+                            
+                        }
+                    }
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: yValues)  // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    .chartPlotStyle { plotArea in
+                        plotArea
+                            .background(.gray.opacity(0.2))
+                    }
+                    Text("Avg\n\(roundsData.pos4Avg, specifier: "%.1f")\n\(roundsData.pos4Avg/5*100, specifier: "%.0f")%")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                        .multilineTextAlignment(.center)
+                }
                 Text("Pos 4")
-                    .rotationEffect(.degrees(-90))
                     .fontWeight(.bold)
-                Chart {
-                    ForEach(roundsData.roundsData, id: \.self) { item in
-                        LineMark (
-                            x: .value("", item.date!.formatted(date: .long, time: .shortened)),
-                            y: .value("", item.pos4)
-                        )
-                        .foregroundStyle(Color.blue)
-                        .symbol(Circle())
-                        RuleMark(y:  .value("Average", roundsData.pos4Avg))
-                            .foregroundStyle(.red)
-                        
-                    }
-                }
-                .chartYScale(domain: 0...5)
-                .chartYAxis{
-                    AxisMarks(position: .trailing, values: yValues)  // << here !!
-                }
-                .chartXAxis{
-                    AxisMarks {
-                        AxisGridLine()
-                    }}
-                Text("Avg\n\(roundsData.pos4Avg, specifier: "%.1f")\n\(roundsData.pos4Avg/5*100, specifier: "%.0f")%")
-                    .foregroundColor(.red)
-                    .padding(.trailing)
-                    .multilineTextAlignment(.center)
             }
-            HStack (spacing: 0) {
+            .padding(.leading, 5)
+            ZStack(alignment: .bottomLeading) {
+                HStack (spacing: 0) {
+                    Chart {
+                        ForEach(roundsData.roundsData, id: \.self) { item in
+                            LineMark (
+                                x: .value("", item.date!.formatted(date: .long, time: .shortened)),
+                                y: .value("", item.pos5)
+                            )
+                            .foregroundStyle(Color.blue)
+                            .symbol(Circle())
+                            RuleMark(y:  .value("Average", roundsData.pos5Avg))
+                                .foregroundStyle(.red)
+                        }
+                    }
+                    .chartYAxis{
+                        AxisMarks(position: .trailing, values: yValues)  // << here !!
+                    }
+                    .chartXAxis{
+                        AxisMarks {
+                            AxisGridLine()
+                        }}
+                    .chartPlotStyle { plotArea in
+                        plotArea
+                            .background(.gray.opacity(0.2))
+                    }
+                    Text("Avg\n\(roundsData.pos5Avg, specifier: "%.1f")\n\(roundsData.pos5Avg/5*100, specifier: "%.0f")%")
+                        .foregroundColor(.red)
+                        .padding(.trailing)
+                        .multilineTextAlignment(.center)
+                }
                 Text("Pos 5")
-                    .rotationEffect(.degrees(-90))
                     .fontWeight(.bold)
-                Chart {
-                    ForEach(roundsData.roundsData, id: \.self) { item in
-                        LineMark (
-                            x: .value("", item.date!.formatted(date: .long, time: .shortened)),
-                            y: .value("", item.pos5)
-                        )
-                        .foregroundStyle(Color.blue)
-                        .symbol(Circle())
-                        RuleMark(y:  .value("Average", roundsData.pos5Avg))
-                            .foregroundStyle(.red)
-                    }
-                }
-                .chartYScale(domain: 0...5)
-                .chartYAxis{
-                    AxisMarks(position: .trailing, values: yValues)  // << here !!
-                }
-                .chartXAxis{
-                    AxisMarks {
-                        AxisGridLine()
-                    }}
-                Text("Avg\n\(roundsData.pos5Avg, specifier: "%.1f")\n\(roundsData.pos5Avg/5*100, specifier: "%.0f")%")
-                    .foregroundColor(.red)
-                    .padding(.trailing)
-                    .multilineTextAlignment(.center)
             }
+            .padding(.leading, 5)
         }
         .padding(.bottom)
-            .onAppear{
-                roundsData.fetchGraphs()
-            }
+        .onAppear{
+            roundsData.fetchGraphs()
+        }
     }
 }
 

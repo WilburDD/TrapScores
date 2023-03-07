@@ -13,13 +13,119 @@ struct EditView: View {
     @EnvironmentObject var roundsData: RoundsDataStack
     @Environment(\.dismiss) var dismiss
     @State private var showAlert: Bool = false
-
+    
     var body: some View {
         VStack {
             Text ("Round Edit")
-                .font(.largeTitle).fontWeight(.bold).italic().multilineTextAlignment(.center)
+                .font(.largeTitle)
+            //                .fontWeight(.bold)
+                .italic()
+            //                .multilineTextAlignment(.center)
                 .padding(5)
-                .opacity(1.0)
+            //                .opacity(1.0)
+            RangeSelectionView()
+            //            Spacer()
+            Spacer()
+            VStack {
+                Text("Score?")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .italic()
+                HStack {
+                    ZStack {
+                        Text ("\(roundsData.posCount[0])")
+                            .font(.largeTitle).underline().fontWeight(.bold)
+                        Picker("", selection: $roundsData.posCount[0]) {
+                            Text("0").tag(0)
+                            Text("1").tag(1)
+                            Text("2").tag(2)
+                            Text("3").tag(3)
+                            Text("4").tag(4)
+                            Text("5").tag(5)
+                                .pickerStyle(MenuPickerStyle())
+                        }
+                        .opacity(0.1)
+                    }
+                    Spacer()
+                    ZStack {
+                        Text ("\(roundsData.posCount[1])")
+                            .font(.largeTitle).underline().fontWeight(.bold)
+                        Picker("", selection: $roundsData.posCount[1]) {
+                            Text("0").tag(0)
+                            Text("1").tag(1)
+                            Text("2").tag(2)
+                            Text("3").tag(3)
+                            Text("4").tag(4)
+                            Text("5").tag(5)
+                                .pickerStyle(MenuPickerStyle())
+                        }
+                        .opacity(0.1)
+                    }
+                    Spacer()
+                    ZStack {
+                        Text ("\(roundsData.posCount[2])")
+                            .font(.largeTitle).underline().fontWeight(.bold)
+                        Picker("", selection: $roundsData.posCount[2]) {
+                            Text("0").tag(0)
+                            Text("1").tag(1)
+                            Text("2").tag(2)
+                            Text("3").tag(3)
+                            Text("4").tag(4)
+                            Text("5").tag(5)
+                                .pickerStyle(MenuPickerStyle())
+                        }
+                        .opacity(0.1)
+                    }
+                    Spacer()
+                    ZStack {
+                        Text ("\(roundsData.posCount[3])")
+                            .font(.largeTitle).underline().fontWeight(.bold)
+                        Picker("", selection: $roundsData.posCount[3]) {
+                            Text("0").tag(0)
+                            Text("1").tag(1)
+                            Text("2").tag(2)
+                            Text("3").tag(3)
+                            Text("4").tag(4)
+                            Text("5").tag(5)
+                                .pickerStyle(MenuPickerStyle())
+                        }
+                        .opacity(0.1)
+                    }
+                    Spacer()
+                    ZStack {
+                        Text ("\(roundsData.posCount[4])")
+                            .font(.largeTitle).underline().fontWeight(.bold)
+                        Picker("", selection: $roundsData.posCount[4]) {
+                            Text("0").tag(0)
+                            Text("1").tag(1)
+                            Text("2").tag(2)
+                            Text("3").tag(3)
+                            Text("4").tag(4)
+                            Text("5").tag(5)
+                                .pickerStyle(MenuPickerStyle())
+                        }
+                        .opacity(0.1)
+                    }
+                }
+                .padding()
+            }
+            VStack (alignment: .center, spacing: 0, content: {
+                Text("Comment")
+                    .font(.title3)
+                TextField (roundsData.comment, text: $roundsData.comment)
+                    .font(.headline)
+                    .textFieldStyle(.roundedBorder)
+                    .onChange(of: self.roundsData.comment, perform : { value in
+                        if value.count > 10 {
+                            self.roundsData.comment = String(value.prefix(28))
+                        }
+                    })
+                    .multilineTextAlignment(.center)
+                    .padding()
+            })
+            //            Spacer()
+            Text("\(roundsData.roundDate .formatDate())")
+            //                .frame(maxWidth: .infinity, maxHeight: .infinity)
             HStack {
                 Button(action: {
                     showAlert = true
@@ -27,7 +133,7 @@ struct EditView: View {
                     Text("DISCARD")
                 })
                 .padding(.all)
-                .font(.headline.bold())
+                .font(.title3.bold())
                 .background(.red)
                 .foregroundColor(.white)
                 .clipShape(Capsule())
@@ -66,119 +172,22 @@ struct EditView: View {
                     Text("SAVE")
                 })
                 .padding(.all)
-                .font(.headline.bold())
+                .font(.title3.bold())
                 .background(.blue)
                 .foregroundColor(.white)
                 .clipShape(Capsule())
             }
-            
-            .padding(20)
-            Text ("Tap on Position Score or Range selection\nto change if desired.\nYou can also enter Comment.\nThen press SAVE or DISCARD. ")
-                .font(.system(size: (18.0), weight: .bold))
-                .multilineTextAlignment(.center)
-            RangeSelectionView()
-            VStack (alignment: .center, spacing: 0, content: {
-                Text("Comment")
-                TextField (roundsData.comment, text: $roundsData.comment)
-                    .font(.headline)
-                    .textFieldStyle(.roundedBorder)
-                    .onChange(of: self.roundsData.comment, perform : { value in
-                        if value.count > 10 {
-                            self.roundsData.comment = String(value.prefix(28))
-                        }
-                    })
-                    .multilineTextAlignment(.center)
-                    .padding()
-            })
-            HStack {
-                ZStack {
-                    Text ("\(roundsData.posCount[0])")
-                        .font(.largeTitle).underline().fontWeight(.bold)
-                    Picker("", selection: $roundsData.posCount[0]) {
-                        Text("0").tag(0)
-                        Text("1").tag(1)
-                        Text("2").tag(2)
-                        Text("3").tag(3)
-                        Text("4").tag(4)
-                        Text("5").tag(5)
-                            .pickerStyle(MenuPickerStyle())
-                    }
-                    .opacity(0.1)
-                }
-                Spacer()
-                ZStack {
-                    Text ("\(roundsData.posCount[1])")
-                        .font(.largeTitle).underline().fontWeight(.bold)
-                    Picker("", selection: $roundsData.posCount[1]) {
-                        Text("0").tag(0)
-                        Text("1").tag(1)
-                        Text("2").tag(2)
-                        Text("3").tag(3)
-                        Text("4").tag(4)
-                        Text("5").tag(5)
-                            .pickerStyle(MenuPickerStyle())
-                    }
-                    .opacity(0.1)
-                }
-                Spacer()
-                ZStack {
-                    Text ("\(roundsData.posCount[2])")
-                        .font(.largeTitle).underline().fontWeight(.bold)
-                    Picker("", selection: $roundsData.posCount[2]) {
-                        Text("0").tag(0)
-                        Text("1").tag(1)
-                        Text("2").tag(2)
-                        Text("3").tag(3)
-                        Text("4").tag(4)
-                        Text("5").tag(5)
-                            .pickerStyle(MenuPickerStyle())
-                    }
-                    .opacity(0.1)
-                }
-                Spacer()
-                ZStack {
-                    Text ("\(roundsData.posCount[3])")
-                        .font(.largeTitle).underline().fontWeight(.bold)
-                    Picker("", selection: $roundsData.posCount[3]) {
-                        Text("0").tag(0)
-                        Text("1").tag(1)
-                        Text("2").tag(2)
-                        Text("3").tag(3)
-                        Text("4").tag(4)
-                        Text("5").tag(5)
-                            .pickerStyle(MenuPickerStyle())
-                    }
-                    .opacity(0.1)
-                }
-                Spacer()
-                ZStack {
-                    Text ("\(roundsData.posCount[4])")
-                        .font(.largeTitle).underline().fontWeight(.bold)
-                    Picker("", selection: $roundsData.posCount[4]) {
-                        Text("0").tag(0)
-                        Text("1").tag(1)
-                        Text("2").tag(2)
-                        Text("3").tag(3)
-                        Text("4").tag(4)
-                        Text("5").tag(5)
-                            .pickerStyle(MenuPickerStyle())
-                    }
-                    .opacity(0.1)
-                }
-            }
             .padding()
-            Spacer()
-            Text("\(roundsData.roundDate .formatDate())")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            Text ("Tap on a Position Score or Range selection to change if desired. You can also enter or edit Comment. Then press SAVE or DISCARD. ")
+                .font(.title3)
+                .italic()
+                .multilineTextAlignment(.center)
+                .padding()
+            
             Spacer()
         }
         .navigationBarHidden(true)
-//        .onAppear() {
-//            UIApplication.shared.isIdleTimerDisabled = false
-//        }
-//        .navigationDestination(isPresented: $roundsData.editDone, destination: {
-//            OpeningTabView()
-//        })
     }
 }
 

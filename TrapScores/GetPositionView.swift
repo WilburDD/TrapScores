@@ -15,6 +15,7 @@ struct GetPositionView: View {
     
     var body: some View {
         VStack{
+            Spacer()
             RangeSelectionView()
             ZStack {
                 Image("range")
@@ -74,25 +75,27 @@ struct GetPositionView: View {
             Spacer()
             ScoringSelectionView()
             Spacer()
-            Text("Press Clicker or iPhone volume button AFTER selecting Range & Position to start scoring.")
-                .fontWeight(.bold)
+            Spacer()
+            Text("To start scoring, click Clicker remote or press either iPhone volume button AFTER selecting Range & Position.")
+//                .fontWeight(.bold)
                 .italic()
                 .multilineTextAlignment(.center)
                 .font(.title2)
                 .navigationBarHidden(true)
                 .environmentObject(roundsData)
-                .onAppear{
-                    roundsData.clearData()
-                    roundsData.seePos = [0.3, 0.3, 0.3, 0.3, 0.3]
-                    roundsData.clickerConfirm = true
-                    roundsData.turnOnClicker()
-                    MPVolumeView.setVolume()
-                }
+            Spacer()
+
+        }
+        .onAppear{
+            roundsData.clearData()
+            roundsData.seePos = [0.3, 0.3, 0.3, 0.3, 0.3]
+            roundsData.clickerConfirm = true
+            roundsData.turnOnClicker()
+            MPVolumeView.setVolume()
         }
         .navigationDestination(isPresented: $roundsData.posSelected, destination: {
             NewRoundView()
         })
-        .edgesIgnoringSafeArea(.top)
     }
 }
 

@@ -15,10 +15,6 @@ struct NewRoundView: View {
     @EnvironmentObject var roundsData: RoundsDataStack
     @State private var showAlert: Bool = false
     
-    //    @State private var timeRemaining = 300
-    //
-    //    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -49,11 +45,16 @@ struct NewRoundView: View {
                 })
                 Spacer()
                 VStack {
-                    Text("New Round").font(.title3.italic())
-                    Text("\(roundsData.selectedRange)").font(.title).fontWeight(.bold)
+                    Text("New Round")
+                        .font(.title.italic())
+                        .padding(5)
+                    Text("\(roundsData.selectedRange)")
+                        .font(.title)
+                        .fontWeight(.bold)
                 }
                 Spacer()
             }
+            .padding()
             
             //            ProgressView("", value: Double(roundsData.shotCount), total: 25).accentColor(.black)
             //            Text("\(timeRemaining)")
@@ -110,7 +111,7 @@ struct NewRoundView: View {
                     Text("\(roundsData.pos5Avg, specifier: "%.1f")").italic()
                 }
             }
-            .padding([.leading, .bottom, .trailing, .top])
+            .padding()
             Spacer()
             HStack{
                 Spacer()

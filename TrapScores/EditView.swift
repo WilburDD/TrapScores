@@ -13,12 +13,13 @@ struct EditView: View {
     @EnvironmentObject var roundsData: RoundsDataStack
     @Environment(\.dismiss) var dismiss
     @State private var showAlert: Bool = false
-    
+
     var body: some View {
         VStack {
             Text ("Round Edit")
                 .font(.largeTitle).fontWeight(.bold).italic().multilineTextAlignment(.center)
                 .padding(5)
+                .opacity(1.0)
             HStack {
                 Button(action: {
                     showAlert = true
@@ -172,6 +173,9 @@ struct EditView: View {
             Spacer()
         }
         .navigationBarHidden(true)
+//        .onAppear() {
+//            UIApplication.shared.isIdleTimerDisabled = false
+//        }
 //        .navigationDestination(isPresented: $roundsData.editDone, destination: {
 //            OpeningTabView()
 //        })

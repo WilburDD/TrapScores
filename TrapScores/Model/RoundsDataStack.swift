@@ -59,8 +59,7 @@ class RoundsDataStack: ObservableObject, Identifiable {
     @Published var pos4Pct = Double (0.0)
     @Published var pos5Pct = Double (0.0)
     @Published var totalPct = Double (0.0)
-    
-    
+
     private var outputVolumeObserve: NSKeyValueObservation?
     private var audioSession = AVAudioSession.sharedInstance()
     private var priorVolume = 0.5
@@ -186,6 +185,7 @@ class RoundsDataStack: ObservableObject, Identifiable {
         if shotCount == 25 {
             scoringStarted = false
             roundComplete = true
+            UIApplication.shared.isIdleTimerDisabled = false
         }
         if shotCount == 5 || shotCount == 10 || shotCount == 15 ||  shotCount == 20 {
             posLoc += 1
@@ -301,7 +301,4 @@ class RoundsDataStack: ObservableObject, Identifiable {
         } catch {}
     }
     
-//        func popToRoot() {
-//            path.removeLast(path.count)
-//        }
 }

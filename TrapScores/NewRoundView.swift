@@ -15,6 +15,10 @@ struct NewRoundView: View {
     @EnvironmentObject var roundsData: RoundsDataStack
     @State private var showAlert: Bool = false
     
+    //    @State private var timeRemaining = 300
+    //
+    //    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -51,8 +55,10 @@ struct NewRoundView: View {
                 Spacer()
             }
             
-            ProgressView("", value: Double(roundsData.shotCount), total: 25).accentColor(.black)
-            
+            //            ProgressView("", value: Double(roundsData.shotCount), total: 25).accentColor(.black)
+            //            Text("\(timeRemaining)")
+            .opacity(1.0)
+            Spacer()
             HStack {
                 VStack{
                     Text ("\(roundsData.posCount[0])")
@@ -145,12 +151,14 @@ struct NewRoundView: View {
         .onAppear{
             roundsData.viewSet = true
             roundsData.scoringStarted = true
+            //            timeRemaining = 300
             MPVolumeView.setVolume()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
                 roundsData.viewSet = false
             }
             roundsData.turnOnClicker()
             roundsData.observeVolume()
+            UIApplication.shared.isIdleTimerDisabled = true
         }
         .onChange(of: roundsData.resetVolume) { newValue in
             roundsData.viewSet = true

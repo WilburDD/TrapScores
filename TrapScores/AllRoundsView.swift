@@ -50,7 +50,11 @@ struct AllRoundsView: View {
             Section(header: RoundsHeader()) {
                 List {
                     ForEach(roundsData.roundsData, id: \.self) { item in
-                        RoundsList(item: item)
+                        NavigationLink {
+                            SavedRoundEdit(item: item)
+                        } label: {
+                            RoundsList(item: item)
+                        }
                     }
                     .onDelete(perform: { indexSet in
                         roundsData.deleteRound(indexSet: indexSet)

@@ -20,6 +20,7 @@
 		3E5DC93327F14EEA00804BE4 /* GetPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DC93227F14EEA00804BE4 /* GetPositionView.swift */; };
 		3E718C702884DF3300BD1824 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0DBF1128449D5B00DB1BEE /* CloudKit.framework */; };
 		3E9A615927FAB4BF0054EE30 /* NewRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9A615827FAB4BF0054EE30 /* NewRoundView.swift */; };
+		3E9C592B29B8760E00543BAF /* SavedRoundEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C592A29B8760E00543BAF /* SavedRoundEdit.swift */; };
 		3EA7218B27FD3975004F67FF /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA7218A27FD3974004F67FF /* EditView.swift */; };
 		3EAA178B2884BA36001576F7 /* ScoringSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAA178A2884BA36001576F7 /* ScoringSelectionView.swift */; };
 		3EAA178D2884C0EF001576F7 /* ScoringButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAA178C2884C0EF001576F7 /* ScoringButtonsView.swift */; };
@@ -56,6 +57,7 @@
 		3E555BC127CDEC8900F316B5 /* MyTrapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTrapModel.xcdatamodel; sourceTree = "<group>"; };
 		3E5DC93227F14EEA00804BE4 /* GetPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPositionView.swift; sourceTree = "<group>"; };
 		3E9A615827FAB4BF0054EE30 /* NewRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRoundView.swift; sourceTree = "<group>"; };
+		3E9C592A29B8760E00543BAF /* SavedRoundEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRoundEdit.swift; sourceTree = "<group>"; };
 		3EA7218A27FD3974004F67FF /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		3EAA178A2884BA36001576F7 /* ScoringSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringSelectionView.swift; sourceTree = "<group>"; };
 		3EAA178C2884C0EF001576F7 /* ScoringButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringButtonsView.swift; sourceTree = "<group>"; };
@@ -112,12 +114,13 @@
 				3E1E973728C8FCCC002AED4F /* GraphView.swift */,
 				3E9A615827FAB4BF0054EE30 /* NewRoundView.swift */,
 				3EAA178C2884C0EF001576F7 /* ScoringButtonsView.swift */,
-				3E5109A327FEE03900C3C8DD /* ScoringInfoView.swift */,
 				3EA7218A27FD3974004F67FF /* EditView.swift */,
+				3E9C592A29B8760E00543BAF /* SavedRoundEdit.swift */,
 				3EF5EDAE2817A0EB0087042D /* RoundsList.swift */,
 				3EF5EDAC2817A0420087042D /* RoundsHeader.swift */,
 				3E1777F2287B5D2B00A9CE48 /* RangeSelectionView.swift */,
 				3EAA178A2884BA36001576F7 /* ScoringSelectionView.swift */,
+				3E5109A327FEE03900C3C8DD /* ScoringInfoView.swift */,
 				3E555BB927CDEC8900F316B5 /* Assets.xcassets */,
 				3E555BBB27CDEC8900F316B5 /* Preview Content */,
 			);
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9C592B29B8760E00543BAF /* SavedRoundEdit.swift in Sources */,
 				3EF5EDAD2817A0420087042D /* RoundsHeader.swift in Sources */,
 				3E555BBF27CDEC8900F316B5 /* RoundsDataStack.swift in Sources */,
 				3E42D281283483F5004DDEA9 /* AllRoundsView.swift in Sources */,
@@ -386,7 +390,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -427,7 +431,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

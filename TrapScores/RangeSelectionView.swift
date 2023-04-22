@@ -13,9 +13,8 @@ struct RangeSelectionView: View {
     
     var body: some View {
         VStack {
-//            Spacer()
             Text("Range?")
-                .font(.largeTitle)
+                .font(.title)
                 .fontWeight(.bold)
                 .italic()
             HStack {
@@ -65,15 +64,16 @@ struct RangeSelectionView: View {
             .clipShape(Capsule())
             .opacity(roundsData.intlOpacity)
         }
-        Divider()
-            .frame(height: 3)
-            .frame(width: 300)
-            .overlay(.blue)
+//        Divider()
+//            .frame(height: 3)
+//            .frame(width: 300)
+//            .overlay(.blue)
     }
 }
 
 struct RangeSelectionView_Previews: PreviewProvider {
     static var previews: some View {
         RangeSelectionView()
+            .environmentObject(RoundsDataStack())
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScoringInfoView: View {
-        
+    
     var body: some View {
         
         VStack {
@@ -19,14 +19,15 @@ struct ScoringInfoView: View {
                 .padding(.top)
             ScrollView {
                 
-                Text(" - App must be running and on phone's screen during scoring.  Do not push lock button on side of phone or switch to another app during or prior to scoring.\n\n - Tap on the Range name at top of the 'Rounds' or 'Graphs' screen to switch between each Range's data. \n\n - Scoring will start automatically at the starting position selected.  After 5 shots, scoring will move to the next position.  Scoring will stop when 25 rounds have been shot and go to 'Round Edit' screen.\n\n - You can edit each position's score if needed and add a Comment on the 'Round Edit' screen.\n\n - Individual rounds can be deleted (permanently) by swiping left on the round in the 'Rounds' view.\n\n - There are two ways to enter your HIT or MISS score after each shot:")
+                Text(" - App must be running and on phone's screen during scoring.  Do not push lock button on side of phone, go to home screen or switch to another app during or prior to scoring.\n\n - Tap on the Range name at top of the Rounds or Graphs screen to switch between each Range's data. \n\n - Once Range, starting shooting Position and method of Scoring Input (a bluetooth remote Clicker or buttons on iPhone screen), scoring will start automatically at the starting position selected.  After 5 shots, scoring will move to the next position.  Scoring will stop when 25 rounds have been shot and go to New Round Edit screen.\n\n - On the New Round Edit screen you can change Range selection, edit each position's Score if needed and add a Comment.  Date & time are automatically entered and cannot be changed.\n\n - Saved rounds can be edited by touching on the round in the Rounds view.\n\n - Saved rounds can be deleted (permanently) by swiping left on the round in the Rounds view.\n\n - There are two ways to enter your HIT or MISS score after each shot:")
                     .fontWeight(.bold)
-                //                                .padding(2)
-                    .padding(5)
+                    .padding(3)
                 Text("1. Using Phone:  Tap either the HIT or MISS button on the iPhone screen.")
-                    .padding(5)
-                Text("2. Use a Bluetooth camera shutter remote (examples shown). Click either button once for a HIT and double-click for a MISS.")
-                    .padding(5)
+                    .padding(8)
+                Text("2. Use a bluetooth camera shutter remote (examples shown).")
+                Text("Click either button once for a HIT and double-click for a MISS.")
+                    .fontWeight(.bold)
+                    .padding(8)
                 //            Spacer()
                 HStack {
                     Image("remote")
@@ -39,7 +40,7 @@ struct ScoringInfoView: View {
                         .scaledToFit()
                         .frame(width: 150)
                 }
-                Spacer()
+                //                Spacer()
                 
             }
             //            .navigationBarHidden(true)

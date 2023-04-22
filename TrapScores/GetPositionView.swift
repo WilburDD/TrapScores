@@ -15,7 +15,7 @@ struct GetPositionView: View {
     
     var body: some View {
         VStack{
-            Spacer()
+//            Spacer()
             RangeSelectionView()
             ZStack {
                 Image("range")
@@ -23,7 +23,10 @@ struct GetPositionView: View {
                     .aspectRatio(contentMode: .fit)
                     .opacity(0.2)
                 VStack{
-                    Text ("Position?").font(.largeTitle).fontWeight(.bold).italic()
+                    Text ("Position?")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .italic()
                     HStack {
                         Button(action: {
                             roundsData.setData(pos: 0)
@@ -68,19 +71,19 @@ struct GetPositionView: View {
                     .padding()
                 }
             }
-            Divider()
-                .frame(height: 3)
-                .frame(width: 300)
-                .overlay(.blue)
-            Spacer()
+//            Divider()
+//                .frame(height: 3)
+//                .frame(width: 300)
+//                .overlay(.blue)
+//            Spacer()
             ScoringSelectionView()
             Spacer()
-            Spacer()
+//            Spacer()
             Text("To start scoring, click Clicker remote or press either iPhone volume button AFTER selecting Range & Position.")
 //                .fontWeight(.bold)
                 .italic()
                 .multilineTextAlignment(.center)
-                .font(.title2)
+                .font(.title3)
                 .navigationBarHidden(true)
                 .environmentObject(roundsData)
             Spacer()

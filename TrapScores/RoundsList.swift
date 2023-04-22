@@ -65,5 +65,6 @@ extension Date {
 //struct RoundsList_Previews: PreviewProvider {
 //    static var previews: some View {
 //        RoundsList(item: RoundEntity())
+//    .environmentObject(RoundsDataStack())
 //    }
 //}

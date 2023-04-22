@@ -19,7 +19,7 @@ struct RoundsHeader: View {
                 Text("Rounds:  \(roundsData.totalRnds)")
             }
             .fontWeight(.bold)
-            .font(.title2)
+            .font(.title)
             HStack {
                 HStack {
                     Text("\(roundsData.pos1Avg, specifier: "%.1f")\n\(roundsData.pos1Avg/5*100, specifier: "%.0f")%")
@@ -42,7 +42,7 @@ struct RoundsHeader: View {
         .padding(.leading)
         .padding(.trailing)
         CustomDivider()
-            .environmentObject(roundsData)
+        .environmentObject(roundsData)
     }
 }
 
@@ -68,5 +68,6 @@ struct CustomDivider: View {
 struct RoundsFooter_Previews: PreviewProvider {
     static var previews: some View {
         RoundsHeader()
+            .environmentObject(RoundsDataStack())
     }
 }

@@ -1,31 +1,35 @@
 //
-//  EditView.swift
+//  SavedRoundEdit.swift
 //  TrapScores
 //
-//  Created by Doxie Davis on 4/6/22.
+//  Created by Doxie Davis on 3/8/23.
 //
 
 import SwiftUI
 import CoreData
 
-struct EditView: View {
+struct SavedRoundEdit: View {
     
     @EnvironmentObject var roundsData: RoundsDataStack
     @Environment(\.dismiss) var dismiss
     @State private var showAlert: Bool = false
+    //    @State var newComment: String
+    
+    let item: RoundEntity
     
     var body: some View {
         VStack {
-            Text ("New Round Edit")
+            Text ("Saved Round Edit")
                 .font(.title)
-                .underline()
                 .italic()
+                .underline()
                 .padding(5)
+            
             RangeSelectionView()
-//            Spacer()
-            VStack (spacing: 10) {
+                .padding(10)
+            VStack {
                 Text("Score?")
-                    .font(.largeTitle)
+                    .font(.title)
                     .fontWeight(.bold)
                     .italic()
                 HStack {
@@ -104,10 +108,10 @@ struct EditView: View {
                         .opacity(0.1)
                     }
                 }
-//                .padding()
+                .padding()
             }
             VStack (alignment: .center, spacing: 0, content: {
-                Text("Comment")
+                Text("Comment (28 char. max)")
                     .font(.title2)
                 TextField (roundsData.comment, text: $roundsData.comment)
                     .font(.title3)
@@ -120,77 +124,70 @@ struct EditView: View {
                     .multilineTextAlignment(.center)
                     .padding()
             })
+            Spacer()
             Text("\(roundsData.roundDate .formatDate())")
                 .font(.title2)
-            HStack {
-                Button(action: {
-                    showAlert = true
-                }, label: {
-                    Text("DISCARD")
-                })
-                .padding(.all)
-                .font(.title3.bold())
-                .background(.red)
-                .foregroundColor(.white)
-                .clipShape(Capsule())
-                .alert(isPresented: $showAlert, content: {
-                    Alert(
-                        title: Text("WARNING"),
-                        message: Text("All Round data will be lost upon DISCARD."),
-                        primaryButton: .cancel(Text("Continue Edit")),
-                        secondaryButton: .destructive(Text("DISCARD Data"), action: {
-                            roundsData.clearData()
-                            showAlert = false
-                            roundsData.posSelected = false
-                            roundsData.editDone = true
-                            roundsData.selection = 0
-                        }))
-                })
-                Spacer()
-                Button(action: {
-                    roundsData.addRound(
-                        range: roundsData.selectedRange,
-                        comment: roundsData.comment,
-                        date: Date.now,
-                        pos1: Int64(roundsData.posCount[0]),
-                        pos2: Int64(roundsData.posCount[1]),
-                        pos3: Int64(roundsData.posCount[2]),
-                        pos4: Int64(roundsData.posCount[3]),
-                        pos5: Int64(roundsData.posCount[4]),
-                        total: Int64(roundsData.roundTotal))
-                    roundsData.saveRounds()
-                    roundsData.fetchRounds()
-                    roundsData.calcAvgs()
-                    roundsData.clearData()
-                    roundsData.editDone = true
-                    roundsData.selection = 0
-                }, label: {
-                    Text("SAVE")
-                })
-                .padding(.all)
-                .font(.title3.bold())
-                .background(.blue)
-                .background(.blue)
-                .foregroundColor(.white)
-                .clipShape(Capsule())
-            }
-            .padding()
-            
-            Text ("Tap on Range selection or a Position Score to change if desired. You can also enter or edit Comment. Then press SAVE or DISCARD. ")
-                .font(.title3)
-                .italic()
-                .multilineTextAlignment(.center)
                 .padding()
-            Spacer()
+            Button(action: {
+                
+
+                
+                roundsData.saveEdit(
+                    range: roundsData.selectedRange,
+                    comment: roundsData.comment,
+                    date: roundsData.roundDate,
+                    id: roundsData.roundID,
+                    pos1: Int64(roundsData.posCount[0]),
+                    pos2: Int64(roundsData.posCount[1]),
+                    pos3: Int64(roundsData.posCount[2]),
+                    pos4: Int64(roundsData.posCount[3]),
+                    pos5: Int64(roundsData.posCount[4]),
+                    total: Int64(roundsData.posCount[0]+roundsData.posCount[1]+roundsData.posCount[2]+roundsData.posCount[3]+roundsData.posCount[4]))
+                roundsData.saveRounds()
+                roundsData.fetchRounds()
+                roundsData.calcAvgs()
+                roundsData.clearData()
+                roundsData.editDone = true
+                roundsData.selection = 0
+                dismiss()
+            }, label: {
+                Text("SAVE EDIT")
+            })
+            .padding(.all)
+            .font(.title3.bold())
+            .background(.red)
+            .foregroundColor(.white)
+            .clipShape(Capsule())
+
+            //
+            //            Spacer()
+            //
+            //            Text ("Tap on Range selection or a Position Score to change if desired. You can also enter or edit Comment. Then press SAVE EDIT or Back. ")
+            //                .font(.title3)
+            //                .italic()
+            //                .multilineTextAlignment(.center)
+            //                .padding()
         }
-        .navigationBarHidden(true)
+        .onAppear {
+//            roundsData.editedIndex = roundsData.roundsData.lastIndex(where: {_ in })
+            roundsData.selectedRange = item.range!
+            roundsData.comment = item.comment!
+            roundsData.roundDate = item.date!
+            roundsData.roundID = item.id ?? UUID()
+            roundsData.posCount[0] = Int(item.pos1)
+            roundsData.posCount[1] = Int(item.pos2)
+            roundsData.posCount[2] = Int(item.pos3)
+            roundsData.posCount[3] = Int(item.pos4)
+            roundsData.posCount[4] = Int(item.pos5)
+            roundsData.roundTotal = Int(item.total)
+        }
     }
 }
 
-struct EditView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditView()
-            .environmentObject(RoundsDataStack())
-    }
-}
+//struct SavedRoundEdit_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SavedRoundEdit(item: item)
+//            .environmentObject(RoundsDataStack())
+//    }
+//}
 

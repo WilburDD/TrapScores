@@ -15,6 +15,8 @@ class RoundsDataStack: ObservableObject, Identifiable {
     
     @Published var roundsData: [RoundEntity] = []
     
+    @Published var editedIndex = IndexSet()
+            
     @Published var amerOpactity = 1.0
     @Published var contOpactity = 0.5
     @Published var intlOpacity = 0.5
@@ -35,6 +37,7 @@ class RoundsDataStack: ObservableObject, Identifiable {
     @Published var clickerConfirm = false
     @Published var showInfo = false
     @Published var roundDate = Date()
+    @Published var roundID = UUID()
     @Published var editDone = false
     @Published var roundComplete = false
     @Published var exitNewRound = false
@@ -151,13 +154,29 @@ class RoundsDataStack: ObservableObject, Identifiable {
         newRound.range = range
         newRound.comment = comment
         newRound.date = date
-        //        newRound.id = id
+        newRound.id = UUID()
         newRound.pos1 = pos1
         newRound.pos2 = pos2
         newRound.pos3 = pos3
         newRound.pos4 = pos4
         newRound.pos5 = pos5
         newRound.total = total
+        saveRounds()
+        calcAvgs()
+    }
+    
+    func saveEdit(range: String, comment: String, date: Date, id: UUID, pos1: Int64, pos2: Int64, pos3: Int64, pos4: Int64, pos5: Int64, total: Int64 ) {
+        let editedRound = RoundEntity(context: managedObjectContext)
+        editedRound.range = range
+        editedRound.comment = comment
+        editedRound.date = date
+        editedRound.id = id
+        editedRound.pos1 = pos1
+        editedRound.pos2 = pos2
+        editedRound.pos3 = pos3
+        editedRound.pos4 = pos4
+        editedRound.pos5 = pos5
+        editedRound.total = total
         saveRounds()
         calcAvgs()
     }
@@ -170,11 +189,11 @@ class RoundsDataStack: ObservableObject, Identifiable {
         calcAvgs()
     }
     
-    func editRound(entity: RoundEntity) {
-        // set new data to edited data
-        saveRounds()
-        calcAvgs()
-    }
+//    func editRound(entity: RoundEntity) {
+//        // set new data to edited data
+//        saveRounds()
+//        calcAvgs()
+//    }
     
     func countShot () {
         if hitScore == true {

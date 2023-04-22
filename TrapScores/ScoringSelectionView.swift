@@ -13,7 +13,10 @@ struct ScoringSelectionView: View {
     
     var body: some View {
         VStack {
-            Text ("Scoring input?").font(.largeTitle).fontWeight(.bold).italic()
+            Text ("Scoring input?")
+                .font(.title)
+                .fontWeight(.bold)
+                .italic()
             HStack {
                 Spacer()
                 Button(action: {
@@ -51,5 +54,6 @@ struct ScoringSelectionView: View {
 struct ScoringSelectionView_Previews: PreviewProvider {
     static var previews: some View {
         ScoringSelectionView()
+            .environmentObject(RoundsDataStack())
     }
 }

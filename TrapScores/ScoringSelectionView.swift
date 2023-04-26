@@ -37,7 +37,7 @@ struct ScoringSelectionView: View {
                     roundsData.clickerOpacity = 0.5
                     roundsData.phoneOpacity = 1.0
                 }, label: {
-                    Text("Phone").font(.title)
+                    Text("On-screen HIT/MISS").font(.title)
                 })
                 .font(.headline)
                 .padding(10)

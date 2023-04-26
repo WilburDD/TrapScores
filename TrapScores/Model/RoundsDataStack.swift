@@ -15,7 +15,7 @@ class RoundsDataStack: ObservableObject, Identifiable {
     
     @Published var roundsData: [RoundEntity] = []
     
-    @Published var editedIndex = IndexSet()
+    @Published var editedIndex = 0
             
     @Published var amerOpactity = 1.0
     @Published var contOpactity = 0.5
@@ -189,11 +189,12 @@ class RoundsDataStack: ObservableObject, Identifiable {
         calcAvgs()
     }
     
-//    func editRound(entity: RoundEntity) {
-//        // set new data to edited data
-//        saveRounds()
-//        calcAvgs()
-//    }
+    func deleteEditedRound(index: Int) {
+        let entity = roundsData[index]
+        managedObjectContext.delete(entity)
+        saveRounds()
+        calcAvgs()
+    }
     
     func countShot () {
         if hitScore == true {

@@ -13,7 +13,7 @@ struct SavedRoundEdit: View {
     @EnvironmentObject var roundsData: RoundsDataStack
     @Environment(\.dismiss) var dismiss
     @State private var showAlert: Bool = false
-    //    @State var newComment: String
+//    var editedIndex: IndexSet
     
     let item: RoundEntity
     
@@ -130,7 +130,7 @@ struct SavedRoundEdit: View {
                 .padding()
             Button(action: {
                 
-
+                roundsData.deleteEditedRound(index: roundsData.editedIndex)
                 
                 roundsData.saveEdit(
                     range: roundsData.selectedRange,
@@ -169,7 +169,7 @@ struct SavedRoundEdit: View {
             //                .padding()
         }
         .onAppear {
-//            roundsData.editedIndex = roundsData.roundsData.lastIndex(where: {_ in })
+            roundsData.editedIndex = roundsData.roundsData.firstIndex(of: item) ?? 0
             roundsData.selectedRange = item.range!
             roundsData.comment = item.comment!
             roundsData.roundDate = item.date!

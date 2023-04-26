@@ -79,7 +79,7 @@ struct GetPositionView: View {
             ScoringSelectionView()
             Spacer()
 //            Spacer()
-            Text("To start scoring, click Clicker remote or press either iPhone volume button AFTER selecting Range & Position.")
+            Text("To start scoring, press Clicker remote once or press either volume button AFTER selecting Range & Position.")
 //                .fontWeight(.bold)
                 .italic()
                 .multilineTextAlignment(.center)

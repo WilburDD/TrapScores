@@ -36,7 +36,7 @@ struct RoundsHeader: View {
                 Text("\(roundsData.totalAvg, specifier: "%.1f")\n\(roundsData.totalAvg/25*100, specifier: "%.0f")%")
                     .fontWeight(.bold)
             }
-            .font(.title2.italic())
+            .font(.title3.italic())
             .padding(.bottom, 0)
         }
         .padding(.leading)

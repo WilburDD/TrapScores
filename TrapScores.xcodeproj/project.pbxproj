@@ -18,7 +18,7 @@
 		3E555BBF27CDEC8900F316B5 /* RoundsDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E555BBE27CDEC8900F316B5 /* RoundsDataStack.swift */; };
 		3E555BC227CDEC8900F316B5 /* TrapScoresModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E555BC027CDEC8900F316B5 /* TrapScoresModel.xcdatamodeld */; };
 		3E5DC93327F14EEA00804BE4 /* GetPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DC93227F14EEA00804BE4 /* GetPositionView.swift */; };
-		3E718C702884DF3300BD1824 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0DBF1128449D5B00DB1BEE /* CloudKit.framework */; };
+		3E97E0242A05AD17005AAE51 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0DBF1128449D5B00DB1BEE /* CloudKit.framework */; };
 		3E9A615927FAB4BF0054EE30 /* NewRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9A615827FAB4BF0054EE30 /* NewRoundView.swift */; };
 		3E9C592B29B8760E00543BAF /* SavedRoundEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C592A29B8760E00543BAF /* SavedRoundEdit.swift */; };
 		3EA7218B27FD3975004F67FF /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA7218A27FD3974004F67FF /* EditView.swift */; };
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E718C702884DF3300BD1824 /* CloudKit.framework in Frameworks */,
+				3E97E0242A05AD17005AAE51 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

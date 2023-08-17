@@ -20,12 +20,12 @@ struct RangeSelectionView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    roundsData.selectedRange = "American"
+                    roundsData.selectedRange = "American Trap"
                     roundsData.contOpactity = 0.5
                     roundsData.intlOpacity = 0.5
                     roundsData.amerOpactity = 1.0
                 }, label: {
-                    Text("American").font(.title)
+                    Text("American Trap").font(.title)
                 })                            .font(.headline)
                     .padding(10)
                     .background(Color.blue)
@@ -34,12 +34,12 @@ struct RangeSelectionView: View {
                     .opacity(roundsData.amerOpactity)
                 Spacer()
                 Button(action: {
-                    roundsData.selectedRange = "Continental"
+                    roundsData.selectedRange = "Continental Trap"
                     roundsData.amerOpactity = 0.5
                     roundsData.intlOpacity = 0.5
                     roundsData.contOpactity = 1.0
                 }, label: {
-                    Text("Continental").font(.title)
+                    Text("Continental Trap").font(.title)
                 })
                 .font(.headline)
                 .padding(10)
@@ -50,12 +50,12 @@ struct RangeSelectionView: View {
                 Spacer()
             }
             Button(action: {
-                roundsData.selectedRange = "Intl./Olympic"
+                roundsData.selectedRange = "Intl./Olympic Trap"
                 roundsData.contOpactity = 0.5
                 roundsData.amerOpactity = 0.5
                 roundsData.intlOpacity = 1.0
             }, label: {
-                Text("Intl./Olympic").font(.title)
+                Text("Intl./Olympic Trap").font(.title)
             })
             .font(.headline)
             .padding(10)

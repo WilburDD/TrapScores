@@ -15,7 +15,6 @@ struct GetPositionView: View {
     
     var body: some View {
         VStack{
-//            Spacer()
             RangeSelectionView()
             ZStack {
                 Image("range")
@@ -71,23 +70,16 @@ struct GetPositionView: View {
                     .padding()
                 }
             }
-//            Divider()
-//                .frame(height: 3)
-//                .frame(width: 300)
-//                .overlay(.blue)
-//            Spacer()
             ScoringSelectionView()
             Spacer()
-//            Spacer()
             Text("To start scoring, press Clicker remote once or press either volume button AFTER selecting Range & Position.")
-//                .fontWeight(.bold)
                 .italic()
                 .multilineTextAlignment(.center)
                 .font(.title3)
                 .navigationBarHidden(true)
                 .environmentObject(roundsData)
             Spacer()
-
+            
         }
         .onAppear{
             roundsData.clearData()

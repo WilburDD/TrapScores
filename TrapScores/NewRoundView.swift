@@ -55,9 +55,6 @@ struct NewRoundView: View {
                 Spacer()
             }
             .padding()
-            
-            //            ProgressView("", value: Double(roundsData.shotCount), total: 25).accentColor(.black)
-            //            Text("\(timeRemaining)")
             .opacity(1.0)
             Spacer()
             HStack {

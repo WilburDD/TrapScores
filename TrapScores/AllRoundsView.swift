@@ -25,12 +25,12 @@ struct AllRoundsView: View {
                         roundsData.intlOpacity = 0.5
                     } else {
                         if roundsData.selectedRange == "Continental Trap" {
-                            roundsData.selectedRange = "Intl./Olympic Trap"
+                            roundsData.selectedRange = "ISSF/Olympic Trap"
                             roundsData.intlOpacity = 1.0
                             roundsData.contOpactity = 0.5
                             roundsData.amerOpactity = 0.5
                         } else {
-                            if roundsData.selectedRange == "Intl./Olympic Trap" {
+                            if roundsData.selectedRange == "ISSF/Olympic Trap" {
                                 roundsData.selectedRange = "American Trap"
                                 roundsData.intlOpacity = 0.5
                                 roundsData.contOpactity = 0.5

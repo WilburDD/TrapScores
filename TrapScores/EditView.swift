@@ -22,7 +22,6 @@ struct EditView: View {
                 .italic()
                 .padding(5)
             RangeSelectionView()
-//            Spacer()
             VStack (spacing: 10) {
                 Text("Score?")
                     .font(.largeTitle)
@@ -104,7 +103,6 @@ struct EditView: View {
                         .opacity(0.1)
                     }
                 }
-//                .padding()
             }
             VStack (alignment: .center, spacing: 0, content: {
                 Text("Comment")

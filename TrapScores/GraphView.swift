@@ -24,23 +24,23 @@ struct GraphView: View {
         VStack {
             HStack {
                 Button(action: {
-                    if roundsData.selectedRange == "American" {
-                        roundsData.selectedRange = "Continental"
+                    if roundsData.selectedRange == "American Trap" {
+                        roundsData.selectedRange = "Continental Trap"
                         roundsData.contOpactity = 1.0
                         roundsData.amerOpactity = 0.5
                         roundsData.intlOpacity = 0.5
                     } else {
-                        if roundsData.selectedRange == "Continental" {
-                            roundsData.selectedRange = "Intl./Olympic"
+                        if roundsData.selectedRange == "Continental Trap" {
+                            roundsData.selectedRange = "ISSF/Olympic Trap"
                             roundsData.intlOpacity = 1.0
                             roundsData.contOpactity = 0.5
                             roundsData.amerOpactity = 0.5
                         } else {
-                            if roundsData.selectedRange == "Intl./Olympic" {
-                                roundsData.selectedRange = "American"
+                            if roundsData.selectedRange == "ISSF/Olympic Trap" {
+                                roundsData.selectedRange = "American Trap"
+                                roundsData.amerOpactity = 1.0
                                 roundsData.intlOpacity = 0.5
                                 roundsData.contOpactity = 0.5
-                                roundsData.amerOpactity = 1.0
                             }}}
                     roundsData.fetchGraphs()
                     roundsData.calcAvgs()
@@ -272,5 +272,6 @@ struct GraphView: View {
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
         GraphView()
+            .environmentObject(RoundsDataStack())
     }
 }

@@ -17,57 +17,54 @@ struct RangeSelectionView: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .italic()
-            HStack {
-                Spacer()
-                Button(action: {
-                    roundsData.selectedRange = "American Trap"
-                    roundsData.contOpactity = 0.5
-                    roundsData.intlOpacity = 0.5
-                    roundsData.amerOpactity = 1.0
-                }, label: {
-                    Text("American Trap").font(.title)
-                })                            .font(.headline)
+            VStack {
+                HStack {
+                    Button(action: {
+                        roundsData.selectedRange = "American Trap"
+                        roundsData.contOpactity = 0.5
+                        roundsData.intlOpacity = 0.5
+                        roundsData.amerOpactity = 1.0
+                    }, label: {
+                        Text("American").font(.title)
+                    })                            .font(.headline)
+                        .padding(10)
+                        .background(Color.blue)
+                        .foregroundColor(Color.white)
+                        .clipShape(Capsule())
+                        .opacity(roundsData.amerOpactity)
+                    //                Spacer()
+                    Button(action: {
+                        roundsData.selectedRange = "Continental Trap"
+                        roundsData.amerOpactity = 0.5
+                        roundsData.intlOpacity = 0.5
+                        roundsData.contOpactity = 1.0
+                    }, label: {
+                        Text("Continental").font(.title)
+                    })
+                    .font(.headline)
                     .padding(10)
                     .background(Color.blue)
                     .foregroundColor(Color.white)
                     .clipShape(Capsule())
-                    .opacity(roundsData.amerOpactity)
-                Spacer()
+                    .opacity(roundsData.contOpactity)
+                    //                Spacer()
+                }
                 Button(action: {
-                    roundsData.selectedRange = "Continental Trap"
+                    roundsData.selectedRange = "ISSF/Olympic Trap"
+                    roundsData.contOpactity = 0.5
                     roundsData.amerOpactity = 0.5
-                    roundsData.intlOpacity = 0.5
-                    roundsData.contOpactity = 1.0
+                    roundsData.intlOpacity = 1.0
                 }, label: {
-                    Text("Continental Trap").font(.title)
+                    Text("ISSF/Olympic").font(.title)
                 })
                 .font(.headline)
                 .padding(10)
                 .background(Color.blue)
                 .foregroundColor(Color.white)
                 .clipShape(Capsule())
-                .opacity(roundsData.contOpactity)
-                Spacer()
+                .opacity(roundsData.intlOpacity)
             }
-            Button(action: {
-                roundsData.selectedRange = "Intl./Olympic Trap"
-                roundsData.contOpactity = 0.5
-                roundsData.amerOpactity = 0.5
-                roundsData.intlOpacity = 1.0
-            }, label: {
-                Text("Intl./Olympic Trap").font(.title)
-            })
-            .font(.headline)
-            .padding(10)
-            .background(Color.blue)
-            .foregroundColor(Color.white)
-            .clipShape(Capsule())
-            .opacity(roundsData.intlOpacity)
         }
-//        Divider()
-//            .frame(height: 3)
-//            .frame(width: 300)
-//            .overlay(.blue)
     }
 }
 

@@ -13,6 +13,8 @@ import MediaPlayer
 
 class RoundsDataStack: ObservableObject, Identifiable {
     
+    @AppStorage ("firstRun") var firstRun = true
+    
     @Published var roundsData: [RoundEntity] = []
     
     @Published var editedIndex = 0

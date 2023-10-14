@@ -8,10 +8,16 @@
 import SwiftUI
 
 @main
-struct TrapScoresWatch_Watch_AppApp: App {
+struct TrapScores_Watch_App: App {
+    
+    @StateObject var roundData = WatchData()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ChooseRange()
+                .environmentObject(roundData)
+                .environment(\.managedObjectContext,
+                              roundData.managedObjectContext)
         }
     }
 }

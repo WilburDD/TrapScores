@@ -27,9 +27,9 @@ struct ScoringView: View {
                         showAlert = true
                     }
                 }, label: {
-                        Text("<")
-                            .font(.title2)
-                            .foregroundColor(.white)
+                    Text("<")
+                        .font(.title2)
+                        .foregroundColor(.white)
                 })
                 .frame(width: 40, height: 25)
                 .alert("WARNING", isPresented: $showAlert) {
@@ -122,19 +122,8 @@ struct ScoringView: View {
         .onAppear {
             roundData.range = roundData.ranges[item]
             roundData.pos = item + 1
-            if roundData.range == "American Trap" || roundData.range == "Continental Trap" || roundData.range == "ISSF/Olympic Trap" || roundData.range == "Compak/5-Stand" {
-                roundData.positions = 4
-                roundData.scoring = [5, 5, 5, 5, 5]
-            } else if roundData.range == "American Skeet" {
-                roundData.positions = 7
-                roundData.scoring = [4, 4, 2, 2, 2, 4, 4, 3]
-            } else if roundData.range == "ISSF/Olympic Skeet" {
-                roundData.positions = 8
-                roundData.scoring = [3, 3, 3, 2, 3, 3, 2, 4, 2]
-            } else if roundData.range == "Double Trap" {
-                roundData.positions = 4
-                roundData.scoring = [10, 10, 10, 10, 10]
-            }
+            roundData.positions = 4
+            roundData.scoring = [5, 5, 5, 5, 5]
         }
     }
 }

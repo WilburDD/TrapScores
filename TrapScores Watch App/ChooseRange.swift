@@ -21,7 +21,7 @@ struct ChooseRange: View {
                     .underline()
                     .fontWeight(.bold)
                 List {
-                    ForEach (0..<7) { item in
+                    ForEach (0..<3) { item in
                         NavigationLink (destination: ScoringView(item: item)) {
                             HStack {
                                 Text("\(roundData.ranges[item])")

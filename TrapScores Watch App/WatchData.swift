@@ -1,6 +1,6 @@
 //
 //  Persistence.swift
-//  MyClayScores
+//  TrapScores
 //
 //  Created by Doxie Davis on 6/23/23.
 //
@@ -14,15 +14,15 @@ import CoreData
 import CloudKit
 
 class WatchData: ObservableObject, Identifiable {
-        
+            
     @Published var roundData: [RoundEntity] = []
 
     @Published var positions = 0
     @Published var pos = Int()
     @Published var range = String("")
-    @Published var ranges = ["American Trap", "Continental Trap", "ISSF/Olympic Trap", "Double Trap", "American Skeet", "ISSF/Olympic Skeet", "Compak/5-Stand"]
+    @Published var ranges = ["American Trap", "Continental Trap", "ISSF/Olympic Trap"]
     @Published var rangeSelected = false
-    @Published var posCount = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    @Published var posCount = [0, 0, 0, 0, 0]
     @Published var scoring = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     @Published var roundTotal = 0
     @Published var roundDate = Date()
@@ -46,7 +46,7 @@ class WatchData: ObservableObject, Identifiable {
         let container: NSPersistentContainer
         
         init(inMemory: Bool = false) {
-            container = NSPersistentCloudKitContainer(name: "MyClayScoresModel")
+            container = NSPersistentCloudKitContainer(name: "TrapScoresModel")
             if inMemory {
                 container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
             }

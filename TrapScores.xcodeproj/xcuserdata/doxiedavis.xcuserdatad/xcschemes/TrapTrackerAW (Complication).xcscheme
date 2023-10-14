@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1340"
+   LastUpgradeVersion = "1500"
    version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -87,15 +87,6 @@
             ReferencedContainer = "container:TrapScores.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3E062A0B28235556000B4E8D"
-            BuildableName = "TrapTrackerAW.app"
-            BlueprintName = "TrapTrackerAW"
-            ReferencedContainer = "container:TrapScores.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

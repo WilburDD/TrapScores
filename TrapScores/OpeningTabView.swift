@@ -43,6 +43,11 @@ struct OpeningTabView: View {
             }
             .accentColor(.blue)
         }
+        .onAppear{
+            if roundsData.firstRun == true {
+                
+            }
+        }
     }
     init() {
         UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance.init(idiom: .unspecified)

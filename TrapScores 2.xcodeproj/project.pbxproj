@@ -17,16 +17,6 @@
 		3E555BBD27CDEC8900F316B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E555BBC27CDEC8900F316B5 /* Preview Assets.xcassets */; };
 		3E555BBF27CDEC8900F316B5 /* RoundsDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E555BBE27CDEC8900F316B5 /* RoundsDataStack.swift */; };
 		3E555BC227CDEC8900F316B5 /* TrapScoresModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E555BC027CDEC8900F316B5 /* TrapScoresModel.xcdatamodeld */; };
-		3E56B6382AD78413009F8B3B /* TrapScoresWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B6372AD78413009F8B3B /* TrapScoresWatchApp.swift */; };
-		3E56B63F2AD78415009F8B3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E56B63E2AD78415009F8B3B /* Preview Assets.xcassets */; };
-		3E56B6422AD78415009F8B3B /* TrapScores.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3E56B6352AD78413009F8B3B /* TrapScores.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3E56B6492AD79040009F8B3B /* WatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B6482AD79040009F8B3B /* WatchData.swift */; };
-		3E56B64F2AD79085009F8B3B /* ScoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B64A2AD79085009F8B3B /* ScoringView.swift */; };
-		3E56B6502AD79085009F8B3B /* ChooseRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B64B2AD79085009F8B3B /* ChooseRange.swift */; };
-		3E56B6512AD79085009F8B3B /* EnterComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B64C2AD79085009F8B3B /* EnterComment.swift */; };
-		3E56B6522AD79085009F8B3B /* EnterScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B64D2AD79085009F8B3B /* EnterScore.swift */; };
-		3E56B6532AD79085009F8B3B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B64E2AD79085009F8B3B /* ComplicationController.swift */; };
-		3E56B6552AD79098009F8B3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E56B6542AD79098009F8B3B /* Assets.xcassets */; };
 		3E5DC93327F14EEA00804BE4 /* GetPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DC93227F14EEA00804BE4 /* GetPositionView.swift */; };
 		3E97E0242A05AD17005AAE51 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0DBF1128449D5B00DB1BEE /* CloudKit.framework */; };
 		3E9A615927FAB4BF0054EE30 /* NewRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9A615827FAB4BF0054EE30 /* NewRoundView.swift */; };
@@ -34,20 +24,9 @@
 		3EA7218B27FD3975004F67FF /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA7218A27FD3974004F67FF /* EditView.swift */; };
 		3EAA178B2884BA36001576F7 /* ScoringSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAA178A2884BA36001576F7 /* ScoringSelectionView.swift */; };
 		3EAA178D2884C0EF001576F7 /* ScoringButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAA178C2884C0EF001576F7 /* ScoringButtonsView.swift */; };
-		3EB257232AD8E06900C76ADA /* TrapScoresModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E555BC027CDEC8900F316B5 /* TrapScoresModel.xcdatamodeld */; };
 		3EF5EDAD2817A0420087042D /* RoundsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5EDAC2817A0420087042D /* RoundsHeader.swift */; };
 		3EF5EDAF2817A0EB0087042D /* RoundsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5EDAE2817A0EB0087042D /* RoundsList.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3E56B6402AD78415009F8B3B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E555BAA27CDEC8700F316B5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3E56B6342AD78413009F8B3B;
-			remoteInfo = "TrapScoresWatch Watch App";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3E062A2D28235559000B4E8D /* Embed Watch Content */ = {
@@ -56,7 +35,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				3E56B6422AD78415009F8B3B /* TrapScores.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,23 +55,12 @@
 		3E555BBC27CDEC8900F316B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E555BBE27CDEC8900F316B5 /* RoundsDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsDataStack.swift; sourceTree = "<group>"; };
 		3E555BC127CDEC8900F316B5 /* MyTrapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTrapModel.xcdatamodel; sourceTree = "<group>"; };
-		3E56B6352AD78413009F8B3B /* TrapScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrapScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E56B6372AD78413009F8B3B /* TrapScoresWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapScoresWatchApp.swift; sourceTree = "<group>"; };
-		3E56B63E2AD78415009F8B3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3E56B6482AD79040009F8B3B /* WatchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchData.swift; sourceTree = "<group>"; };
-		3E56B64A2AD79085009F8B3B /* ScoringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoringView.swift; sourceTree = "<group>"; };
-		3E56B64B2AD79085009F8B3B /* ChooseRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseRange.swift; sourceTree = "<group>"; };
-		3E56B64C2AD79085009F8B3B /* EnterComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterComment.swift; sourceTree = "<group>"; };
-		3E56B64D2AD79085009F8B3B /* EnterScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterScore.swift; sourceTree = "<group>"; };
-		3E56B64E2AD79085009F8B3B /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		3E56B6542AD79098009F8B3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../MyClayScores/MCS Watch App/Assets.xcassets"; sourceTree = "<group>"; };
 		3E5DC93227F14EEA00804BE4 /* GetPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPositionView.swift; sourceTree = "<group>"; };
 		3E9A615827FAB4BF0054EE30 /* NewRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRoundView.swift; sourceTree = "<group>"; };
 		3E9C592A29B8760E00543BAF /* SavedRoundEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRoundEdit.swift; sourceTree = "<group>"; };
 		3EA7218A27FD3974004F67FF /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		3EAA178A2884BA36001576F7 /* ScoringSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringSelectionView.swift; sourceTree = "<group>"; };
 		3EAA178C2884C0EF001576F7 /* ScoringButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringButtonsView.swift; sourceTree = "<group>"; };
-		3EB257242AD9199500C76ADA /* TrapScores Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TrapScores Watch App.entitlements"; sourceTree = "<group>"; };
 		3EF5EDAC2817A0420087042D /* RoundsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsHeader.swift; sourceTree = "<group>"; };
 		3EF5EDAE2817A0EB0087042D /* RoundsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,13 +71,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E97E0242A05AD17005AAE51 /* CloudKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E56B6322AD78413009F8B3B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,9 +88,7 @@
 		3E555BA927CDEC8700F316B5 = {
 			isa = PBXGroup;
 			children = (
-				3EB257242AD9199500C76ADA /* TrapScores Watch App.entitlements */,
 				3E555BB427CDEC8700F316B5 /* TrapScores */,
-				3E56B6362AD78413009F8B3B /* TrapScores Watch App */,
 				3E555BB327CDEC8700F316B5 /* Products */,
 				3E0DBF1028449D5B00DB1BEE /* Frameworks */,
 			);
@@ -140,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				3E555BB227CDEC8700F316B5 /* TrapScores.app */,
-				3E56B6352AD78413009F8B3B /* TrapScores.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,30 +144,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		3E56B6362AD78413009F8B3B /* TrapScores Watch App */ = {
-			isa = PBXGroup;
-			children = (
-				3E56B6482AD79040009F8B3B /* WatchData.swift */,
-				3E56B6372AD78413009F8B3B /* TrapScoresWatchApp.swift */,
-				3E56B64B2AD79085009F8B3B /* ChooseRange.swift */,
-				3E56B64E2AD79085009F8B3B /* ComplicationController.swift */,
-				3E56B64A2AD79085009F8B3B /* ScoringView.swift */,
-				3E56B64D2AD79085009F8B3B /* EnterScore.swift */,
-				3E56B64C2AD79085009F8B3B /* EnterComment.swift */,
-				3E56B6542AD79098009F8B3B /* Assets.xcassets */,
-				3E56B63D2AD78415009F8B3B /* Preview Content */,
-			);
-			path = "TrapScores Watch App";
-			sourceTree = "<group>";
-		};
-		3E56B63D2AD78415009F8B3B /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				3E56B63E2AD78415009F8B3B /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,28 +159,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				3E56B6412AD78415009F8B3B /* PBXTargetDependency */,
 			);
 			name = TrapScores;
 			productName = TrapTracker_v2;
 			productReference = 3E555BB227CDEC8700F316B5 /* TrapScores.app */;
-			productType = "com.apple.product-type.application";
-		};
-		3E56B6342AD78413009F8B3B /* TrapScores Watch App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3E56B6452AD78415009F8B3B /* Build configuration list for PBXNativeTarget "TrapScores Watch App" */;
-			buildPhases = (
-				3E56B6312AD78413009F8B3B /* Sources */,
-				3E56B6322AD78413009F8B3B /* Frameworks */,
-				3E56B6332AD78413009F8B3B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "TrapScores Watch App";
-			productName = "TrapScoresWatch Watch App";
-			productReference = 3E56B6352AD78413009F8B3B /* TrapScores.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -257,14 +172,11 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					3E555BB127CDEC8700F316B5 = {
 						CreatedOnToolsVersion = 13.2.1;
-					};
-					3E56B6342AD78413009F8B3B = {
-						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -282,7 +194,6 @@
 			projectRoot = "";
 			targets = (
 				3E555BB127CDEC8700F316B5 /* TrapScores */,
-				3E56B6342AD78413009F8B3B /* TrapScores Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -294,15 +205,6 @@
 			files = (
 				3E555BBD27CDEC8900F316B5 /* Preview Assets.xcassets in Resources */,
 				3E555BBA27CDEC8900F316B5 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E56B6332AD78413009F8B3B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E56B63F2AD78415009F8B3B /* Preview Assets.xcassets in Resources */,
-				3E56B6552AD79098009F8B3B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,37 +234,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E56B6312AD78413009F8B3B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E56B64F2AD79085009F8B3B /* ScoringView.swift in Sources */,
-				3E56B6522AD79085009F8B3B /* EnterScore.swift in Sources */,
-				3E56B6502AD79085009F8B3B /* ChooseRange.swift in Sources */,
-				3E56B6492AD79040009F8B3B /* WatchData.swift in Sources */,
-				3EB257232AD8E06900C76ADA /* TrapScoresModel.xcdatamodeld in Sources */,
-				3E56B6532AD79085009F8B3B /* ComplicationController.swift in Sources */,
-				3E56B6512AD79085009F8B3B /* EnterComment.swift in Sources */,
-				3E56B6382AD78413009F8B3B /* TrapScoresWatchApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3E56B6412AD78415009F8B3B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3E56B6342AD78413009F8B3B /* TrapScores Watch App */;
-			targetProxy = 3E56B6402AD78415009F8B3B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3E555BC327CDEC8900F316B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -424,7 +302,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -479,7 +356,6 @@
 		3E555BC627CDEC8900F316B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TrapScores/TrapScores.entitlements;
@@ -491,7 +367,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TrapScores/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TrapScores;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = TrapScores;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -506,7 +382,7 @@
 				);
 				LOCALIZATION_EXPORT_SUPPORTED = YES;
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 1.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores;
 				PRODUCT_NAME = TrapScores;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -521,7 +397,6 @@
 		3E555BC727CDEC8900F316B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TrapScores/TrapScores.entitlements;
@@ -533,7 +408,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TrapScores/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TrapScores;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = TrapScores;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -548,7 +423,7 @@
 				);
 				LOCALIZATION_EXPORT_SUPPORTED = YES;
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 1.9.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores;
 				PRODUCT_NAME = TrapScores;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -557,77 +432,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		3E56B6432AD78415009F8B3B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = "TrapScores Watch App.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TrapScores Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = CM53CRQF5E;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.doxiedavis.TrapScores;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores.watchkitapp;
-				PRODUCT_NAME = TrapScores;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.4;
-			};
-			name = Debug;
-		};
-		3E56B6442AD78415009F8B3B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_ENTITLEMENTS = "TrapScores Watch App.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TrapScores Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = CM53CRQF5E;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.doxiedavis.TrapScores;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores.watchkitapp;
-				PRODUCT_NAME = TrapScores;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.4;
 			};
 			name = Release;
 		};
@@ -648,15 +452,6 @@
 			buildConfigurations = (
 				3E555BC627CDEC8900F316B5 /* Debug */,
 				3E555BC727CDEC8900F316B5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3E56B6452AD78415009F8B3B /* Build configuration list for PBXNativeTarget "TrapScores Watch App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E56B6432AD78415009F8B3B /* Debug */,
-				3E56B6442AD78415009F8B3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -149,7 +149,6 @@ struct NewRoundView: View {
         .onAppear{
             roundsData.viewSet = true
             roundsData.scoringStarted = true
-            //            timeRemaining = 300
             MPVolumeView.setVolume()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
                 roundsData.viewSet = false

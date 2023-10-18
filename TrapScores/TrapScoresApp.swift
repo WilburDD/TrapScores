@@ -11,20 +11,20 @@ import SwiftUI
 struct TrapScoresApp: App {
     
     @StateObject var roundsDataStack = RoundsDataStack()
-    
     @Environment(\.scenePhase) var scenePhase
-    
+        
     var body: some Scene {
         
         WindowGroup {
-            OpeningTabView()
-                .environmentObject(roundsDataStack)
-                .environment(\.managedObjectContext,
-                              roundsDataStack.managedObjectContext)
-                .onChange(of: scenePhase) { _ in
-                    roundsDataStack.saveRounds()
-                }
+                OpeningTabView()
+                    .environmentObject(roundsDataStack)
+                    .environment(\.managedObjectContext,
+                                  roundsDataStack.managedObjectContext)
+                    .onChange(of: scenePhase) { _ in
+                        roundsDataStack.saveRounds()
+                    }
+            }
         }
     }
-}
+
 

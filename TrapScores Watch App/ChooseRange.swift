@@ -11,9 +11,9 @@ import WatchKit
 struct ChooseRange: View {
     
     @EnvironmentObject var roundData: WatchData
-
+    
     var body: some View {
-
+        
         NavigationStack {
             VStack {
                 Text("Select Range")
@@ -34,6 +34,7 @@ struct ChooseRange: View {
                     }
                 }
                 .listStyle(CarouselListStyle())
+                Spacer()
             }
             .environmentObject(roundData)
             .onAppear {

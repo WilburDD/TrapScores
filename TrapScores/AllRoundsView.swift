@@ -13,6 +13,7 @@ import MediaPlayer
 struct AllRoundsView: View {
     
     @EnvironmentObject var roundsData: RoundsDataStack
+    @AppStorage ("firstRun") var firstRun = true
     
     var body: some View {
         VStack{
@@ -71,6 +72,10 @@ struct AllRoundsView: View {
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+        .sheet(isPresented: $firstRun, content: {
+            FirstRun()
+                .transition(.move(edge: .bottom))
+        })
     }
 }
 

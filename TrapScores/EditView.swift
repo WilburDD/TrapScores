@@ -145,7 +145,6 @@ struct EditView: View {
                         }))
                 })
                 Spacer()
-
                 Button(action: {
                     roundsData.addRound(
                         range: roundsData.selectedRange,

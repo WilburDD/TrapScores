@@ -11,7 +11,8 @@ import CoreData
 struct OpeningTabView: View {
     
     @EnvironmentObject var roundsData: RoundsDataStack
-    
+    @Environment(\.dismiss) var dismiss
+            
     var body: some View {
         NavigationStack(path: $roundsData.path) {
             TabView (selection: $roundsData.selection) {
@@ -42,11 +43,6 @@ struct OpeningTabView: View {
                     .tag(3)
             }
             .accentColor(.blue)
-        }
-        .onAppear{
-            if roundsData.firstRun == true {
-                
-            }
         }
     }
     init() {

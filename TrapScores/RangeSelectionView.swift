@@ -32,7 +32,6 @@ struct RangeSelectionView: View {
                         .foregroundColor(Color.white)
                         .clipShape(Capsule())
                         .opacity(roundsData.amerOpactity)
-                    //                Spacer()
                     Button(action: {
                         roundsData.selectedRange = "Continental Trap"
                         roundsData.amerOpactity = 0.5

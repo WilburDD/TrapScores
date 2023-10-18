@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0FCCCC2ADA6F5D0022478D /* FinishRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FCCCB2ADA6F5D0022478D /* FinishRound.swift */; };
 		3E1777F3287B5D2B00A9CE48 /* RangeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1777F2287B5D2B00A9CE48 /* RangeSelectionView.swift */; };
 		3E1E973628C832DC002AED4F /* OpeningTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E973528C832DC002AED4F /* OpeningTabView.swift */; };
 		3E1E973828C8FCCD002AED4F /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1E973728C8FCCC002AED4F /* GraphView.swift */; };
+		3E27E9F92ADB70D300825253 /* FirstRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27E9F82ADB70D300825253 /* FirstRun.swift */; };
 		3E42D281283483F5004DDEA9 /* AllRoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E42D280283483F5004DDEA9 /* AllRoundsView.swift */; };
 		3E5109A427FEE03900C3C8DD /* ScoringInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5109A327FEE03900C3C8DD /* ScoringInfoView.swift */; };
 		3E555BB627CDEC8700F316B5 /* TrapScoresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E555BB527CDEC8700F316B5 /* TrapScoresApp.swift */; };
@@ -66,9 +68,11 @@
 /* Begin PBXFileReference section */
 		3E0DBF1128449D5B00DB1BEE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3E0DBF132844A4FD00DB1BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3E0FCCCB2ADA6F5D0022478D /* FinishRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRound.swift; sourceTree = "<group>"; };
 		3E1777F2287B5D2B00A9CE48 /* RangeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSelectionView.swift; sourceTree = "<group>"; };
 		3E1E973528C832DC002AED4F /* OpeningTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningTabView.swift; sourceTree = "<group>"; };
 		3E1E973728C8FCCC002AED4F /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		3E27E9F82ADB70D300825253 /* FirstRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRun.swift; sourceTree = "<group>"; };
 		3E42D280283483F5004DDEA9 /* AllRoundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRoundsView.swift; sourceTree = "<group>"; };
 		3E5109A327FEE03900C3C8DD /* ScoringInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringInfoView.swift; sourceTree = "<group>"; };
 		3E555BB227CDEC8700F316B5 /* TrapScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrapScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +168,7 @@
 				3E1777F2287B5D2B00A9CE48 /* RangeSelectionView.swift */,
 				3EAA178A2884BA36001576F7 /* ScoringSelectionView.swift */,
 				3E5109A327FEE03900C3C8DD /* ScoringInfoView.swift */,
+				3E27E9F82ADB70D300825253 /* FirstRun.swift */,
 				3E555BB927CDEC8900F316B5 /* Assets.xcassets */,
 				3E555BBB27CDEC8900F316B5 /* Preview Content */,
 			);
@@ -195,6 +200,7 @@
 				3E56B64B2AD79085009F8B3B /* ChooseRange.swift */,
 				3E56B64E2AD79085009F8B3B /* ComplicationController.swift */,
 				3E56B64A2AD79085009F8B3B /* ScoringView.swift */,
+				3E0FCCCB2ADA6F5D0022478D /* FinishRound.swift */,
 				3E56B64D2AD79085009F8B3B /* EnterScore.swift */,
 				3E56B64C2AD79085009F8B3B /* EnterComment.swift */,
 				3E56B6542AD79098009F8B3B /* Assets.xcassets */,
@@ -327,6 +333,7 @@
 				3E9A615927FAB4BF0054EE30 /* NewRoundView.swift in Sources */,
 				3EA7218B27FD3975004F67FF /* EditView.swift in Sources */,
 				3E1E973628C832DC002AED4F /* OpeningTabView.swift in Sources */,
+				3E27E9F92ADB70D300825253 /* FirstRun.swift in Sources */,
 				3E555BB627CDEC8700F316B5 /* TrapScoresApp.swift in Sources */,
 				3E5DC93327F14EEA00804BE4 /* GetPositionView.swift in Sources */,
 			);
@@ -338,6 +345,7 @@
 			files = (
 				3E56B64F2AD79085009F8B3B /* ScoringView.swift in Sources */,
 				3E56B6522AD79085009F8B3B /* EnterScore.swift in Sources */,
+				3E0FCCCC2ADA6F5D0022478D /* FinishRound.swift in Sources */,
 				3E56B6502AD79085009F8B3B /* ChooseRange.swift in Sources */,
 				3E56B6492AD79040009F8B3B /* WatchData.swift in Sources */,
 				3EB257232AD8E06900C76ADA /* TrapScoresModel.xcdatamodeld in Sources */,
@@ -506,7 +514,7 @@
 				);
 				LOCALIZATION_EXPORT_SUPPORTED = YES;
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores;
 				PRODUCT_NAME = TrapScores;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -548,7 +556,7 @@
 				);
 				LOCALIZATION_EXPORT_SUPPORTED = YES;
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores;
 				PRODUCT_NAME = TrapScores;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -583,7 +591,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores.watchkitapp;
 				PRODUCT_NAME = TrapScores;
 				SDKROOT = watchos;
@@ -619,7 +627,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores.watchkitapp;
 				PRODUCT_NAME = TrapScores;
 				SDKROOT = watchos;

@@ -27,7 +27,7 @@ struct ScoringInfoView: View {
                 .font(.title.italic())
                 .fontWeight(.bold)
                 .padding(.top)
-            Text("v. 2.0")
+            Text("v. 2.2")
                 .font(.headline)
                 .opacity(0.3)
             ScrollView {

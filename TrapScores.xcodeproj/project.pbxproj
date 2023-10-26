@@ -25,11 +25,16 @@
 		3E56B6492AD79040009F8B3B /* WatchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B6482AD79040009F8B3B /* WatchData.swift */; };
 		3E56B64F2AD79085009F8B3B /* ScoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B64A2AD79085009F8B3B /* ScoringView.swift */; };
 		3E56B6502AD79085009F8B3B /* ChooseRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B64B2AD79085009F8B3B /* ChooseRange.swift */; };
-		3E56B6512AD79085009F8B3B /* EnterComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B64C2AD79085009F8B3B /* EnterComment.swift */; };
 		3E56B6522AD79085009F8B3B /* EnterScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B64D2AD79085009F8B3B /* EnterScore.swift */; };
 		3E56B6532AD79085009F8B3B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E56B64E2AD79085009F8B3B /* ComplicationController.swift */; };
-		3E56B6552AD79098009F8B3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E56B6542AD79098009F8B3B /* Assets.xcassets */; };
 		3E5DC93327F14EEA00804BE4 /* GetPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DC93227F14EEA00804BE4 /* GetPositionView.swift */; };
+		3E67416A2AEA109500D5B456 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6741692AEA109500D5B456 /* WidgetKit.framework */; };
+		3E67416C2AEA109500D5B456 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E67416B2AEA109500D5B456 /* SwiftUI.framework */; };
+		3E67416F2AEA109500D5B456 /* TrapScores_Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67416E2AEA109500D5B456 /* TrapScores_Widgets.swift */; };
+		3E6741712AEA109500D5B456 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6741702AEA109500D5B456 /* AppIntent.swift */; };
+		3E6741732AEA109700D5B456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6741722AEA109700D5B456 /* Assets.xcassets */; };
+		3E6741772AEA109700D5B456 /* TrapScores WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3E6741682AEA109500D5B456 /* TrapScores WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3E6741812AEA1C7100D5B456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6741802AEA1C7100D5B456 /* Assets.xcassets */; };
 		3E97E0242A05AD17005AAE51 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0DBF1128449D5B00DB1BEE /* CloudKit.framework */; };
 		3E9A615927FAB4BF0054EE30 /* NewRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9A615827FAB4BF0054EE30 /* NewRoundView.swift */; };
 		3E9C592B29B8760E00543BAF /* SavedRoundEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C592A29B8760E00543BAF /* SavedRoundEdit.swift */; };
@@ -49,6 +54,13 @@
 			remoteGlobalIDString = 3E56B6342AD78413009F8B3B;
 			remoteInfo = "TrapScoresWatch Watch App";
 		};
+		3E6741752AEA109700D5B456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E555BAA27CDEC8700F316B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E6741672AEA109500D5B456;
+			remoteInfo = "TrapScores WidgetsExtension";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +73,17 @@
 				3E56B6422AD78415009F8B3B /* TrapScores.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6741782AEA109700D5B456 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3E6741772AEA109700D5B456 /* TrapScores WidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -87,11 +110,17 @@
 		3E56B6482AD79040009F8B3B /* WatchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchData.swift; sourceTree = "<group>"; };
 		3E56B64A2AD79085009F8B3B /* ScoringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoringView.swift; sourceTree = "<group>"; };
 		3E56B64B2AD79085009F8B3B /* ChooseRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseRange.swift; sourceTree = "<group>"; };
-		3E56B64C2AD79085009F8B3B /* EnterComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterComment.swift; sourceTree = "<group>"; };
 		3E56B64D2AD79085009F8B3B /* EnterScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterScore.swift; sourceTree = "<group>"; };
 		3E56B64E2AD79085009F8B3B /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		3E56B6542AD79098009F8B3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../MyClayScores/MCS Watch App/Assets.xcassets"; sourceTree = "<group>"; };
 		3E5DC93227F14EEA00804BE4 /* GetPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPositionView.swift; sourceTree = "<group>"; };
+		3E6741682AEA109500D5B456 /* TrapScores WidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TrapScores WidgetsExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E6741692AEA109500D5B456 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3E67416B2AEA109500D5B456 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3E67416E2AEA109500D5B456 /* TrapScores_Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapScores_Widgets.swift; sourceTree = "<group>"; };
+		3E6741702AEA109500D5B456 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		3E6741722AEA109700D5B456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E6741742AEA109700D5B456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E6741802AEA1C7100D5B456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E9A615827FAB4BF0054EE30 /* NewRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRoundView.swift; sourceTree = "<group>"; };
 		3E9C592A29B8760E00543BAF /* SavedRoundEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRoundEdit.swift; sourceTree = "<group>"; };
 		3EA7218A27FD3974004F67FF /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
@@ -118,6 +147,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3E6741652AEA109500D5B456 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E67416C2AEA109500D5B456 /* SwiftUI.framework in Frameworks */,
+				3E67416A2AEA109500D5B456 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				3E0DBF1128449D5B00DB1BEE /* CloudKit.framework */,
+				3E6741692AEA109500D5B456 /* WidgetKit.framework */,
+				3E67416B2AEA109500D5B456 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,6 +175,7 @@
 				3EB257242AD9199500C76ADA /* TrapScores Watch App.entitlements */,
 				3E555BB427CDEC8700F316B5 /* TrapScores */,
 				3E56B6362AD78413009F8B3B /* TrapScores Watch App */,
+				3E67416D2AEA109500D5B456 /* TrapScores Widgets */,
 				3E555BB327CDEC8700F316B5 /* Products */,
 				3E0DBF1028449D5B00DB1BEE /* Frameworks */,
 			);
@@ -145,6 +186,7 @@
 			children = (
 				3E555BB227CDEC8700F316B5 /* TrapScores.app */,
 				3E56B6352AD78413009F8B3B /* TrapScores.app */,
+				3E6741682AEA109500D5B456 /* TrapScores WidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,8 +244,7 @@
 				3E56B64A2AD79085009F8B3B /* ScoringView.swift */,
 				3E0FCCCB2ADA6F5D0022478D /* FinishRound.swift */,
 				3E56B64D2AD79085009F8B3B /* EnterScore.swift */,
-				3E56B64C2AD79085009F8B3B /* EnterComment.swift */,
-				3E56B6542AD79098009F8B3B /* Assets.xcassets */,
+				3E6741802AEA1C7100D5B456 /* Assets.xcassets */,
 				3E56B63D2AD78415009F8B3B /* Preview Content */,
 			);
 			path = "TrapScores Watch App";
@@ -215,6 +256,17 @@
 				3E56B63E2AD78415009F8B3B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3E67416D2AEA109500D5B456 /* TrapScores Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				3E67416E2AEA109500D5B456 /* TrapScores_Widgets.swift */,
+				3E6741702AEA109500D5B456 /* AppIntent.swift */,
+				3E6741722AEA109700D5B456 /* Assets.xcassets */,
+				3E6741742AEA109700D5B456 /* Info.plist */,
+			);
+			path = "TrapScores Widgets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,15 +298,34 @@
 				3E56B6312AD78413009F8B3B /* Sources */,
 				3E56B6322AD78413009F8B3B /* Frameworks */,
 				3E56B6332AD78413009F8B3B /* Resources */,
+				3E6741782AEA109700D5B456 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3E6741762AEA109700D5B456 /* PBXTargetDependency */,
 			);
 			name = "TrapScores Watch App";
 			productName = "TrapScoresWatch Watch App";
 			productReference = 3E56B6352AD78413009F8B3B /* TrapScores.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3E6741672AEA109500D5B456 /* TrapScores WidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E67417B2AEA109700D5B456 /* Build configuration list for PBXNativeTarget "TrapScores WidgetsExtension" */;
+			buildPhases = (
+				3E6741642AEA109500D5B456 /* Sources */,
+				3E6741652AEA109500D5B456 /* Frameworks */,
+				3E6741662AEA109500D5B456 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TrapScores WidgetsExtension";
+			productName = "TrapScores WidgetsExtension";
+			productReference = 3E6741682AEA109500D5B456 /* TrapScores WidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -271,6 +342,9 @@
 					};
 					3E56B6342AD78413009F8B3B = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					3E6741672AEA109500D5B456 = {
+						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
@@ -289,6 +363,7 @@
 			targets = (
 				3E555BB127CDEC8700F316B5 /* TrapScores */,
 				3E56B6342AD78413009F8B3B /* TrapScores Watch App */,
+				3E6741672AEA109500D5B456 /* TrapScores WidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -307,8 +382,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6741812AEA1C7100D5B456 /* Assets.xcassets in Resources */,
 				3E56B63F2AD78415009F8B3B /* Preview Assets.xcassets in Resources */,
-				3E56B6552AD79098009F8B3B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6741662AEA109500D5B456 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E6741732AEA109700D5B456 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,8 +433,16 @@
 				3E56B6492AD79040009F8B3B /* WatchData.swift in Sources */,
 				3EB257232AD8E06900C76ADA /* TrapScoresModel.xcdatamodeld in Sources */,
 				3E56B6532AD79085009F8B3B /* ComplicationController.swift in Sources */,
-				3E56B6512AD79085009F8B3B /* EnterComment.swift in Sources */,
 				3E56B6382AD78413009F8B3B /* TrapScoresWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E6741642AEA109500D5B456 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E67416F2AEA109500D5B456 /* TrapScores_Widgets.swift in Sources */,
+				3E6741712AEA109500D5B456 /* AppIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +453,11 @@
 			isa = PBXTargetDependency;
 			target = 3E56B6342AD78413009F8B3B /* TrapScores Watch App */;
 			targetProxy = 3E56B6402AD78415009F8B3B /* PBXContainerItemProxy */;
+		};
+		3E6741762AEA109700D5B456 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E6741672AEA109500D5B456 /* TrapScores WidgetsExtension */;
+			targetProxy = 3E6741752AEA109700D5B456 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -492,7 +588,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TrapScores/TrapScores.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.2;
 				DEVELOPMENT_ASSET_PATHS = "\"TrapScores/Preview Content\"";
 				DEVELOPMENT_TEAM = CM53CRQF5E;
 				ENABLE_PREVIEWS = YES;
@@ -514,7 +610,7 @@
 				);
 				LOCALIZATION_EXPORT_SUPPORTED = YES;
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores;
 				PRODUCT_NAME = TrapScores;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -534,7 +630,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TrapScores/TrapScores.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.2;
 				DEVELOPMENT_ASSET_PATHS = "\"TrapScores/Preview Content\"";
 				DEVELOPMENT_TEAM = CM53CRQF5E;
 				ENABLE_PREVIEWS = YES;
@@ -556,7 +652,7 @@
 				);
 				LOCALIZATION_EXPORT_SUPPORTED = YES;
 				LOCALIZED_STRING_SWIFTUI_SUPPORT = YES;
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores;
 				PRODUCT_NAME = TrapScores;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -571,13 +667,14 @@
 		3E56B6432AD78415009F8B3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "TrapScores Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.2;
 				DEVELOPMENT_ASSET_PATHS = "\"TrapScores Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CM53CRQF5E;
 				ENABLE_PREVIEWS = YES;
@@ -591,7 +688,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores.watchkitapp;
 				PRODUCT_NAME = TrapScores;
 				SDKROOT = watchos;
@@ -607,13 +704,14 @@
 		3E56B6442AD78415009F8B3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "TrapScores Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.2;
 				DEVELOPMENT_ASSET_PATHS = "\"TrapScores Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = CM53CRQF5E;
 				ENABLE_PREVIEWS = YES;
@@ -627,7 +725,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.doxiedavis.TrapScores.watchkitapp;
 				PRODUCT_NAME = TrapScores;
 				SDKROOT = watchos;
@@ -636,6 +734,75 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+		3E6741792AEA109700D5B456 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.2;
+				DEVELOPMENT_TEAM = CM53CRQF5E;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TrapScores Widgets/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TrapScores Widgets";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.doxiedavis.TrapScores.watchkitapp.TrapScores-Widgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		3E67417A2AEA109700D5B456 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.2;
+				DEVELOPMENT_TEAM = CM53CRQF5E;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TrapScores Widgets/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TrapScores Widgets";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 2.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.doxiedavis.TrapScores.watchkitapp.TrapScores-Widgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -665,6 +832,15 @@
 			buildConfigurations = (
 				3E56B6432AD78415009F8B3B /* Debug */,
 				3E56B6442AD78415009F8B3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E67417B2AEA109700D5B456 /* Build configuration list for PBXNativeTarget "TrapScores WidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E6741792AEA109700D5B456 /* Debug */,
+				3E67417A2AEA109700D5B456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

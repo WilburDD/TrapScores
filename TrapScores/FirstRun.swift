@@ -25,11 +25,12 @@ struct FirstRun: View {
                             .font(.title)
                     })
                 }
-                Text("Welcome to\nTrapScores v. 2.0")
+                Text("Welcome to\nTrapScores v. 2.2")
                     .font(.title.italic())
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                 Text("\nThere are now 3 ways to enter your scores:")
+                    .multilineTextAlignment(.center)
                 Text("1. Using the HIT or MISS button on the iPhone or iPad screen.\n2. Using a Bluetooh camera remote.\n3. Using an Apple Watch!")
                     .padding()
                 Text("Scoring with the Apple Watch is independent of the app and the app doesn't need to be running on your phone or iPad.  Scores are added to the app from the watch via the cloud.\n\nSee ''? Info'', for complete instructions.\n\nSend me your comments & feedback:  myclayscores@gmail.com.  Enjoy!\n")
